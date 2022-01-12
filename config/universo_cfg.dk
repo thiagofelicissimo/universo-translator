@@ -1,0 +1,41 @@
+
+def elaboration : Type.
+    [] cts.star --> cts.var.
+    [] cts.box --> cts.var.
+    [] cts.ball --> cts.var.
+    [] cts.triangle --> cts.var.
+    [] cts.diamond --> cts.var.
+    [] cts.sinf --> cts.var.
+
+def output : Type.
+    [] cts.enum cts.uzero --> cts.set0.
+    [] cts.enum (cts.usucc cts.uzero) --> cts.set1.
+    [] cts.enum (cts.usucc (cts.usucc cts.uzero)) --> cts.set2.
+    [] cts.enum (cts.usucc (cts.usucc (cts.usucc cts.uzero))) --> cts.set3.
+
+def qfuf_specification : Type.
+    [] cts.Axiom cts.set0 cts.set1 --> cts.true.
+    [] cts.Axiom cts.set1 cts.set2 --> cts.true.
+    [] cts.Axiom cts.set2 cts.set3 --> cts.true.
+    [] cts.Rule cts.set0 cts.set0 cts.set0 --> cts.true.
+    [] cts.Rule cts.set0 cts.set1 cts.set1 --> cts.true.
+    [] cts.Rule cts.set0 cts.set2 cts.set2 --> cts.true.
+    [] cts.Rule cts.set0 cts.set3 cts.set3 --> cts.true.
+    [] cts.Rule cts.set1 cts.set0 cts.set1 --> cts.true.
+    [] cts.Rule cts.set1 cts.set1 cts.set1 --> cts.true.
+    [] cts.Rule cts.set1 cts.set2 cts.set2 --> cts.true.
+    [] cts.Rule cts.set1 cts.set3 cts.set3 --> cts.true.
+    [] cts.Rule cts.set2 cts.set0 cts.set2 --> cts.true.
+    [] cts.Rule cts.set2 cts.set1 cts.set2 --> cts.true.
+    [] cts.Rule cts.set2 cts.set2 cts.set2 --> cts.true.
+    [] cts.Rule cts.set2 cts.set3 cts.set3 --> cts.true.
+    [] cts.Rule cts.set3 cts.set0 cts.set3 --> cts.true.
+    [] cts.Rule cts.set3 cts.set1 cts.set3 --> cts.true.
+    [] cts.Rule cts.set3 cts.set2 cts.set3 --> cts.true.
+    [] cts.Rule cts.set3 cts.set3 cts.set3 --> cts.true.
+    [a] cts.Cumul a a --> cts.true.
+
+def solver : Type.
+
+def end : Type.
+

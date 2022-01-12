@@ -1,0 +1,41 @@
+def refl :
+  cts.Term
+    cts.star
+    (cts.prod
+       cts.triangle
+       cts.star
+       cts.star
+       cts.I
+       (cts.univ cts.box cts.triangle cts.I)
+       (x => cts.prod cts.box cts.star cts.star cts.I x (x0 => leibniz_cts.leibniz x x0 x0)))
+  :=
+  A:(cts.Term cts.triangle (cts.univ cts.box cts.triangle cts.I)) =>
+  x:(cts.Term
+       cts.diamond
+       (cts.cast
+          cts.triangle
+          cts.sinf
+          (cts.univ cts.box cts.triangle cts.I)
+          (cts.univ cts.diamond cts.sinf cts.I)
+          cts.I
+          A)) =>
+  P:((cts.Term
+        cts.diamond
+        (cts.cast
+           cts.triangle
+           cts.sinf
+           (cts.univ cts.box cts.triangle cts.I)
+           (cts.univ cts.diamond cts.sinf cts.I)
+           cts.I
+           A)) ->
+     cts.Term
+       cts.diamond
+       (cts.cast
+          cts.triangle
+          cts.sinf
+          (cts.univ cts.box cts.triangle cts.I)
+          (cts.univ cts.diamond cts.sinf cts.I)
+          cts.I
+          (cts.univ cts.star cts.box cts.I))) =>
+  px:(cts.Term cts.star (P x)) => px.
+
