@@ -1,0 +1,21 @@
+def elaboration : Type.
+    [] cts.star --> cts.var.
+    [] cts.box --> cts.var.
+    [] cts.ball --> cts.var.
+    [] cts.triangle --> cts.var.
+    [] cts.diamond --> cts.var.
+    [] cts.sinf --> cts.var.
+
+def output : Type.
+
+
+def lra_specification : Type.
+    [a,b]   cts.Axiom a b   --> cts.eq (cts.succ a) b.
+    [a,b,c] cts.Rule  a b c --> cts.eq (cts.max a b) c.
+    [a,b]   cts.Cumul a b  --> cts.eq a b.
+
+def solver : Type.
+    [] logic --> lra.
+
+def end : Type.
+

@@ -1,14 +1,4 @@
-#!/bin/python3
-"""
-USAGE: generate_cts.py N
-N is the number of universes that need to be generated
-"""
 
-
-import sys
-
-
-PUBLIC_SIG = """
 (;---------- PUBLIC SIG ----------;)
 
 (; Represents the type of sorts ;)
@@ -19,12 +9,6 @@ Univ: s : Sort -> Type.
 
 (; `Term s A` is the encoded version of term living in type A ;)
 def Term : s : Sort -> a : Univ s -> Type.
-
-
-def UNat : Type.
-def enum : UNat -> Sort.
-def uzero : UNat.
-def usucc : UNat -> UNat.
 
 bool : Type.
 eps : bool -> Type.
@@ -44,9 +28,8 @@ def cast : s : Sort -> s' : Sort -> a : Univ s -> b : Univ s' -> eps (SubType s 
 univ' (s : Sort) (s' : Sort) : Univ s'.
 def prod' : s1 : Sort -> s2 : Sort -> s3 : Sort -> a : Univ s1 -> b : (Term s1 a -> Univ s2) -> Univ s3.
 def cast' : s : Sort -> s' : Sort -> a : Univ s -> b : Univ s' -> Term s a -> Term s' b.
-"""
 
-PRIVATE_SIG = """
+
 (;---------- PRIVATE SIG ----------;)
 [s,s',p] univ s s' p --> univ' s s'.
 [s1,s2,s3,p] prod s1 s2 s3 p --> prod' s1 s2 s3.
@@ -73,9 +56,8 @@ I : eps true.
 [s1, s2, s3, a, b] prod' s1 _ s3 a (x => cast' _ _ (univ' s2 _) (univ' _ _) (b x)) --> prod' s1 s2 s3 a (x => b x).
 [s1,s2,s3,A,B,C,b] cast' _ _ (prod' s1 s2 _ A B) (prod' s1 s3 _ A C) (x => b x) --> x : Term s1 A => cast' s2 s3 (B x) (C x) (b x).
 [s1,s2,s3,A,B,C,b,a] cast' _ _ (prod' s1 s2 _ A B) (prod' s1 s3 _ A C) b a --> cast' s2 s3 (B a) (C a) (b a).
-"""
 
-STTFA_SPEC="""
+
 (;---------- STTFA SPEC ----------;)
 def triangle : Sort.
 def diamond : Sort.
@@ -98,32 +80,33 @@ def ball : Sort.
 
 [] Cumul box diamond --> true.
 [] Cumul triangle ball --> true.
-"""
 
-def generateAgdaSpec(num_univ):
-    ans = "(;---------- AGDA SPEC -----------;)\n"
+(;---------- AGDA SPEC -----------;)
+def set0 : Sort.
+def set1 : Sort.
+def set2 : Sort.
+def set3 : Sort.
+def set4 : Sort.
 
-    #def set2 : Sort.
-    for i in range(0, num_univ):
-        ans += f"def set{i} : Sort.\n"
+(; LRA ;)
 
-    #[] Axiom seti setj --> true.
-    for i in range(0, num_univ-1):
-        ans += f"[] Axiom set{i} set{i+1} --> true.\n"
+def UNat : Type.
+def enum : UNat -> Sort.
+def uzero : UNat.
+def usucc : UNat -> UNat.
+def eq : Sort -> Sort -> bool.
+def max : Sort -> Sort -> Sort.
+def succ : Sort -> Sort.
 
-    #[] Rule seti setj setk --> true
-    for i in range(0, num_univ):
-        for j in range(0, num_univ):
-            ans += f"[] Rule set{i} set{j} set{max(i,j)} --> true.\n"
 
-    ans += "[a] Cumul a a --> true.\n"
 
-    return ans
+[a]     succ (enum a) --> enum (usucc a).
 
-if __name__ == '__main__':
-    # number of universes
-    N = int(sys.argv[1])
-    print(PUBLIC_SIG)
-    print(PRIVATE_SIG)
-    print(STTFA_SPEC)
-    print(generateAgdaSpec(N))
+[a]     Axiom (enum a) (enum (usucc a)) --> true.
+
+[a,b,c] Rule (enum (usucc a)) (enum (usucc b)) (enum (usucc c)) --> 
+           Rule (enum a) (enum b) (enum c).
+[a]     Rule (enum uzero) a a --> true.
+[a]     Rule a (enum uzero) a --> true.
+
+[a]     Cumul a a --> true.

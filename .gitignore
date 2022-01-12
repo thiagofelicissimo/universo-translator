@@ -3,6 +3,5 @@ _build
 ctslib
 final
 output
-theory/cts.dk
-config/universo_cfg.dk
 **/*.dko
+**/*.swp

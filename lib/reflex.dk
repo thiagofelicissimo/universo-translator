@@ -1,9 +1,0 @@
-def refl : 
-  sttfa.eps 
-    (sttfa.forallP 
-      (X : sttfa.type => 
-        sttfa.forall X (x : sttfa.eta X => leibniz.leibniz X x x)))
-:= 
-A : sttfa.type => x : sttfa.eta A => 
-  P : (sttfa.eta A -> sttfa.eta sttfa.bool) =>
-  px : sttfa.eps (P x) => px.
