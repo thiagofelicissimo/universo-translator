@@ -99,14 +99,33 @@ def max : Sort -> Sort -> Sort.
 def succ : Sort -> Sort.
 
 
-
-[a]     succ (enum a) --> enum (usucc a).
-
-[a]     Axiom (enum a) (enum (usucc a)) --> true.
-
-[a,b,c] Rule (enum (usucc a)) (enum (usucc b)) (enum (usucc c)) --> 
-           Rule (enum a) (enum b) (enum c).
-[a]     Rule (enum uzero) a a --> true.
-[a]     Rule a (enum uzero) a --> true.
-
-[a]     Cumul a a --> true.
+[] Axiom set0 set1 --> true.
+[] Axiom set1 set2 --> true.
+[] Axiom set2 set3 --> true.
+[] Axiom set3 set4 --> true.
+[] Rule set0 set0 set0 --> true.
+[] Rule set0 set1 set1 --> true.
+[] Rule set0 set2 set2 --> true.
+[] Rule set0 set3 set3 --> true.
+[] Rule set0 set4 set4 --> true.
+[] Rule set1 set0 set1 --> true.
+[] Rule set1 set1 set1 --> true.
+[] Rule set1 set2 set2 --> true.
+[] Rule set1 set3 set3 --> true.
+[] Rule set1 set4 set4 --> true.
+[] Rule set2 set0 set2 --> true.
+[] Rule set2 set1 set2 --> true.
+[] Rule set2 set2 set2 --> true.
+[] Rule set2 set3 set3 --> true.
+[] Rule set2 set4 set4 --> true.
+[] Rule set3 set0 set3 --> true.
+[] Rule set3 set1 set3 --> true.
+[] Rule set3 set2 set3 --> true.
+[] Rule set3 set3 set3 --> true.
+[] Rule set3 set4 set4 --> true.
+[] Rule set4 set0 set4 --> true.
+[] Rule set4 set1 set4 --> true.
+[] Rule set4 set2 set4 --> true.
+[] Rule set4 set3 set4 --> true.
+[] Rule set4 set4 set4 --> true.
+[a] Cumul a a --> true.
