@@ -90,26 +90,10 @@ def ball : Sort.
 (;---------- AGDA SPEC -----------;)
 def set0 : Sort.
 def set1 : Sort.
-def set2 : Sort.
-def set3 : Sort.
 [] Axiom set0 set1 --> true.
-[] Axiom set1 set2 --> true.
-[] Axiom set2 set3 --> true.
 [] Rule set0 set0 set0 --> true.
 [] Rule set0 set1 set1 --> true.
-[] Rule set0 set2 set2 --> true.
-[] Rule set0 set3 set3 --> true.
 [] Rule set1 set0 set1 --> true.
 [] Rule set1 set1 set1 --> true.
-[] Rule set1 set2 set2 --> true.
-[] Rule set1 set3 set3 --> true.
-[] Rule set2 set0 set2 --> true.
-[] Rule set2 set1 set2 --> true.
-[] Rule set2 set2 set2 --> true.
-[] Rule set2 set3 set3 --> true.
-[] Rule set3 set0 set3 --> true.
-[] Rule set3 set1 set3 --> true.
-[] Rule set3 set2 set3 --> true.
-[] Rule set3 set3 set3 --> true.
 [a] Cumul a a --> true.
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 n_univ=$1
-rm -rf *.dko output/ _build/ ctslib/
+rm -rf *.dko output/ _build/ ctslib/ final/
 mkdir ctslib
 
 ./config/generate_config.py $n_univ > ./config/universo_cfg.dk
@@ -11,11 +11,11 @@ dkcheck -e theory/*.dk
 
 for f in lib/*.dk
 do
-echo "[dkmeta] converting $f"
-
-# OCAMLRUNPARAM='b' \
-dune exec dkmeta -- -I ./theory \
- -m meta/meta.dk $f > ctslib/$(basename $f)
+	echo "[dkmeta] converting $f"
+	
+	# OCAMLRUNPARAM='b' \
+	dune exec dkmeta -- -I ./theory \
+	 -m meta/meta.dk $f > ctslib/$(basename $f)
 done
 
 
@@ -30,3 +30,25 @@ dune exec universo -- -o output \
 -I theory/ -l \
 $lib_files
 
+
+
+
+mkdir final
+for f in $lib_files
+do
+	base=$(basename $f .dk)
+	dune exec dkmeta -- -m output/`echo $base`_sol.dk \
+	output/$base.dk -I theory/ -I output/ \
+	> final/$base.dk
+
+	sed -i 's/#REQUIRE[^.]*.//' final/$base.dk
+	sed -i '/./,$!d' final/$base.dk
+done
+
+echo "
+
+CHECKING FINAL FILES
+====================
+"
+
+dkcheck -e -I ./theory/ -I ./final/ ./final/*.dk 
