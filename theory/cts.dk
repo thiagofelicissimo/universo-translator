@@ -73,13 +73,14 @@ def ball : Sort.
 
 [] Rule star star star --> true.
 [] Rule box box box --> true.
+[] Rule box box diamond --> true.
 [] Rule box star star --> true.
 [] Rule triangle star star --> true. (; ? ;)
 [] Rule triangle diamond diamond --> true. (; ? ;)
-[] Rule triangle ball ball --> true.
+[] Rule triangle triangle triangle --> true.
 
 [] Cumul box diamond --> true.
-[] Cumul triangle ball --> true.
+
 
 (;---------- AGDA SPEC -----------;)
 def set0 : Sort.

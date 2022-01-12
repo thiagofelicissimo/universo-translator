@@ -3,7 +3,7 @@ set -e
 rm -rf *.dko output/ _build/ ctslib/ final/
 mkdir ctslib
 
-dkcheck -e theory/*.dk
+dkcheck -e --snf theory/*.dk
 
 for f in lib/*.dk
 do
@@ -18,7 +18,7 @@ done
 files=$(dkdep -I ./theory/ -I ./ctslib/ -s theory/*.dk ctslib/*.dk)
 lib_files=$(echo $files | sed 's/[^ ]*theory\/[^ ]*.dk//g' -)
 
-dkcheck -I ./theory -I ./ctslib/ -e $files
+dkcheck -I ./theory -I ./ctslib/ -e --snf $files
 
 OCAMLRUNPARAM='b' \
 dune exec universo -- -o output \
