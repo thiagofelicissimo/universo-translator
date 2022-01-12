@@ -1,11 +1,7 @@
 #!/bin/bash
 set -e
-n_univ=$1
 rm -rf *.dko output/ _build/ ctslib/ final/
 mkdir ctslib
-
-# ./config/generate_config.py $n_univ > ./config/universo_cfg.dk
-# ./theory/generate_cts.py $n_univ   > ./theory/cts.dk
 
 dkcheck -e theory/*.dk
 
