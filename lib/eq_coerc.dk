@@ -1,0 +1,5 @@
+def eq_coerc :
+  sttfa.eps (sttfa.forall sttfa.bool (A:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.forall sttfa.bool (B:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl A (sttfa.impl (eq.eq sttfa.bool A B) B))))
+  :=
+  A:(sttfa.etap (sttfa.p sttfa.bool)) => B:(sttfa.etap (sttfa.p sttfa.bool)) => Ha:(sttfa.eps A) => Heq:(sttfa.eps (eq.eq sttfa.bool A B)) => eq_ind.eq_ind sttfa.bool A (x_19:(sttfa.etap (sttfa.p sttfa.bool)) => x_19) Ha B Heq.
+

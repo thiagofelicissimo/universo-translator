@@ -1,0 +1,3 @@
+eq_ind :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall (sttfa.arrow A sttfa.bool) (P:(sttfa.etap (sttfa.p (sttfa.arrow A sttfa.bool))) => sttfa.impl (P x) (sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.impl (eq.eq A x y) (P y))))))).
+

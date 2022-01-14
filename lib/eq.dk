@@ -1,0 +1,3 @@
+eq :
+  sttfa.etap (sttfa.forallK (A:sttfa.type => sttfa.p (sttfa.arrow A (sttfa.arrow A sttfa.bool)))).
+
