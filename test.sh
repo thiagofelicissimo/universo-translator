@@ -49,4 +49,4 @@ CHECKING FINAL FILES
 ====================
 "
 
-dkcheck -e -I ./theory/ -I ./final/ ./final/*.dk 
+dkcheck -e -I ./theory/ -I ./final/ $(dkdep -si -I ./final -I ./theory ./final/*.dk)
