@@ -1,0 +1,5 @@
+def andb :
+  sttfa.etap (sttfa.p (sttfa.arrow bool.bool (sttfa.arrow bool.bool bool.bool)))
+  :=
+  b1:(sttfa.etap (sttfa.p bool.bool)) => b2:(sttfa.etap (sttfa.p bool.bool)) => match_bool_type.match_bool_type bool.bool b2 false.false b1.
+

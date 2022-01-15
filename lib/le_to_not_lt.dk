@@ -1,0 +1,5 @@
+def le_to_not_lt :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le n m) (Not.Not (lt.lt m n)))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => H:(sttfa.eps (le.le n m)) => lt_to_not_le.lt_to_not_le n (S.S m) (le_to_lt_to_lt.le_to_lt_to_lt n m (S.S m) H (eq_coerc.eq_coerc (le.le (S.S m) (plus.plus O.O (S.S m))) (le.le (S.S m) (S.S m)) (le_plus_n.le_plus_n O.O (S.S m)) (rewrite_l.rewrite_l nat.nat (S.S m) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (S.S m) __) (le.le (S.S m) (S.S m))) (refl.refl sttfa.bool (le.le (S.S m) (S.S m))) (plus.plus O.O (S.S m)) (plus_O_n.plus_O_n (S.S m))))).
+

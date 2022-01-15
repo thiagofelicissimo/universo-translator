@@ -1,0 +1,5 @@
+def le_plus_to_minus :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le n (plus.plus p m)) (le.le (minus.minus n m) p)))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => p:(sttfa.etap (sttfa.p nat.nat)) => lep:(sttfa.eps (le.le n (plus.plus p m))) => eq_coerc.eq_coerc (le.le (minus.minus n m) (minus.minus (plus.plus p m) m)) (le.le (minus.minus n m) p) (monotonic_le_minus_l.monotonic_le_minus_l (plus.plus p m) n m lep) (rewrite_l.rewrite_l nat.nat p (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (minus.minus n m) __) (le.le (minus.minus n m) p)) (refl.refl sttfa.bool (le.le (minus.minus n m) p)) (minus.minus (plus.plus p m) m) (minus_plus_m_m.minus_plus_m_m p m)).
+

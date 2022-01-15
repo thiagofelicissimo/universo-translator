@@ -1,0 +1,5 @@
+def exp_pi_bc :
+  sttfa.eps (sttfa.forall nat.nat (a:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (b:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (c:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall (sttfa.arrow nat.nat nat.nat) (f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat (times.times (exp.exp a (minus.minus c b)) (bigop.bigop nat.nat (minus.minus c b) (i:(sttfa.etap (sttfa.p nat.nat)) => true.true) (S.S O.O) times.times (i:(sttfa.etap (sttfa.p nat.nat)) => f (plus.plus i b)))) (bigop.bigop nat.nat (minus.minus c b) (i:(sttfa.etap (sttfa.p nat.nat)) => true.true) (S.S O.O) times.times (i:(sttfa.etap (sttfa.p nat.nat)) => times.times a (f (plus.plus i b)))))))))
+  :=
+  a:(sttfa.etap (sttfa.p nat.nat)) => b:(sttfa.etap (sttfa.p nat.nat)) => c:(sttfa.etap (sttfa.p nat.nat)) => f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => exp_pi_l.exp_pi_l (minus.minus c b) a (__:(sttfa.etap (sttfa.p nat.nat)) => f (plus.plus __ b)).
+

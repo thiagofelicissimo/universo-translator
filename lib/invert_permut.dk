@@ -1,0 +1,3 @@
+invert_permut :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat nat.nat)))).
+

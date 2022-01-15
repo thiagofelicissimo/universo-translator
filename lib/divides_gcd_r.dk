@@ -1,0 +1,5 @@
+def divides_gcd_r :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => divides.divides (gcd.gcd n m) m)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => proj1.proj1 (divides.divides (gcd.gcd n m) m) (divides.divides (gcd.gcd n m) n) (divides_gcd_nm.divides_gcd_nm n m).
+

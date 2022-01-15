@@ -1,0 +1,5 @@
+def let_clause_1551 :
+  sttfa.eps (sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (eq.eq nat.nat O.O n) (sttfa.forall nat.nat (x347:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n (times.times x347 n))))))
+  :=
+  m:(sttfa.etap (sttfa.p nat.nat)) => n:(sttfa.etap (sttfa.p nat.nat)) => eqn0:(sttfa.eps (eq.eq nat.nat O.O n)) => x347:(sttfa.etap (sttfa.p nat.nat)) => rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n (times.times x347 __)) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (times.times x347 O.O)) (times_n_O.times_n_O x347) n eqn0) n eqn0.
+

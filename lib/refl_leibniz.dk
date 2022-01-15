@@ -1,0 +1,5 @@
+def refl_leibniz :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.eta A) => leibniz.leibniz A x x)))
+  :=
+  A:sttfa.type => x:(sttfa.eta A) => P:(sttfa.eta (sttfa.arrow A sttfa.bool)) => H:(sttfa.eps (P x)) => H.
+

@@ -1,0 +1,5 @@
+def minus_le :
+  sttfa.eps (sttfa.forall nat.nat (x:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (y:(sttfa.etap (sttfa.p nat.nat)) => le.le (minus.minus x y) x)))
+  :=
+  x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => eq_coerc.eq_coerc (le.le (minus.minus x y) (minus.minus (plus.plus x y) y)) (le.le (minus.minus x y) x) (monotonic_le_minus_l.monotonic_le_minus_l (plus.plus x y) x y (le_plus_n_r.le_plus_n_r y x)) (rewrite_l.rewrite_l nat.nat x (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (minus.minus x y) __) (le.le (minus.minus x y) x)) (refl.refl sttfa.bool (le.le (minus.minus x y) x)) (minus.minus (plus.plus x y) y) (minus_plus_m_m.minus_plus_m_m x y)).
+

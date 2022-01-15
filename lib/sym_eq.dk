@@ -1,0 +1,5 @@
+def sym_eq :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.impl (eq.eq A x y) (eq.eq A y x)))))
+  :=
+  A:sttfa.type => x:(sttfa.etap (sttfa.p A)) => y:(sttfa.etap (sttfa.p A)) => Heq:(sttfa.eps (eq.eq A x y)) => rewrite_l.rewrite_l A x (__:(sttfa.etap (sttfa.p A)) => eq.eq A __ x) (refl.refl A x) y (rewrite_l.rewrite_l A x (__:(sttfa.etap (sttfa.p A)) => eq.eq A x __) (refl.refl A x) y Heq).
+

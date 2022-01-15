@@ -1,0 +1,5 @@
+def permut :
+  sttfa.etap (sttfa.p (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat sttfa.bool)))
+  :=
+  f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => m:(sttfa.etap (sttfa.p nat.nat)) => And.And (sttfa.forall nat.nat (i:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le i m) (le.le (f i) m))) (injn.injn f m).
+

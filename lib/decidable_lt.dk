@@ -1,0 +1,5 @@
+def decidable_lt :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => decidable.decidable (lt.lt n m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => decidable_le.decidable_le (S.S n) m.
+

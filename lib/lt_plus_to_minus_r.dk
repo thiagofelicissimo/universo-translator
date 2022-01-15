@@ -1,0 +1,5 @@
+def lt_plus_to_minus_r :
+  sttfa.eps (sttfa.forall nat.nat (a:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (b:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (c:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt (plus.plus a b) c) (lt.lt a (minus.minus c b))))))
+  :=
+  a:(sttfa.etap (sttfa.p nat.nat)) => b:(sttfa.etap (sttfa.p nat.nat)) => c:(sttfa.etap (sttfa.p nat.nat)) => H:(sttfa.eps (lt.lt (plus.plus a b) c)) => le_plus_to_minus_r.le_plus_to_minus_r (S.S a) b c (sym_eq_plus.sym_eq_plus (S.S a) (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => le.le (y b) c) (sym_eq_filter_nat_type_S.sym_eq_filter_nat_type_S (sttfa.arrow nat.nat nat.nat) plus_body.plus_body a (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => le.le (y b) c) (sym_eq_plus_body_S.sym_eq_plus_body_S a (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => le.le (y b) c) H))).
+

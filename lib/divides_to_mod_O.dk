@@ -1,0 +1,5 @@
+def divides_to_mod_O :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt O.O n) (sttfa.impl (divides.divides n m) (eq.eq nat.nat (mod.mod m n) O.O)))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => posn:(sttfa.eps (lt.lt O.O n)) => divnm:(sttfa.eps (divides.divides n m)) => div_mod_spec_to_eq2.div_mod_spec_to_eq2 m n (div.div m n) (mod.mod m n) (div.div m n) O.O (div_mod_spec_div_mod.div_mod_spec_div_mod m n posn) (divides_to_div_mod_spec.divides_to_div_mod_spec n m posn divnm).
+

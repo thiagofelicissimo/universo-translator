@@ -1,0 +1,3 @@
+match_ex_prop :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall (sttfa.arrow A sttfa.bool) (P:(sttfa.etap (sttfa.p (sttfa.arrow A sttfa.bool))) => sttfa.forall sttfa.bool (return:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl (sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.impl (P x) return)) (sttfa.impl (ex.ex A P) return))))).
+

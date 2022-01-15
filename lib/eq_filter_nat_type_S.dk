@@ -1,0 +1,5 @@
+def eq_filter_nat_type_S :
+  sttfa.eps (sttfa.forallP (return_type:sttfa.type => sttfa.forall (sttfa.arrow nat.nat return_type) (return:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat return_type))) => sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz return_type (filter_nat_type.filter_nat_type return_type return (S.S n)) (return (S.S n))))))
+  :=
+  return_type:sttfa.type => return:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat return_type))) => n:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz return_type (filter_nat_type.filter_nat_type return_type return (S.S n)) (return (S.S n)) (axiom_filter_nat_type_S.axiom_filter_nat_type_S return_type return n).
+

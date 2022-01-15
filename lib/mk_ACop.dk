@@ -1,0 +1,3 @@
+mk_ACop :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (nil:(sttfa.etap (sttfa.p A)) => sttfa.forall (sttfa.arrow A (sttfa.arrow A A)) (op:(sttfa.etap (sttfa.p (sttfa.arrow A (sttfa.arrow A A)))) => sttfa.impl (sttfa.forall A (a:(sttfa.etap (sttfa.p A)) => eq.eq A (op nil a) a)) (sttfa.impl (sttfa.forall A (a:(sttfa.etap (sttfa.p A)) => eq.eq A (op a nil) a)) (sttfa.impl (sttfa.forall A (a:(sttfa.etap (sttfa.p A)) => sttfa.forall A (b:(sttfa.etap (sttfa.p A)) => sttfa.forall A (c:(sttfa.etap (sttfa.p A)) => eq.eq A (op a (op b c)) (op (op a b) c))))) (sttfa.impl (sttfa.forall A (a:(sttfa.etap (sttfa.p A)) => sttfa.forall A (b:(sttfa.etap (sttfa.p A)) => eq.eq A (op a b) (op b a)))) (ACop.ACop A nil)))))))).
+

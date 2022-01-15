@@ -1,0 +1,5 @@
+def sym_eq_filter_nat_type_O :
+  sttfa.eps (sttfa.forallP (return_type:sttfa.type => sttfa.forall (sttfa.arrow nat.nat return_type) (return:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat return_type))) => leibniz.leibniz return_type (return O.O) (filter_nat_type.filter_nat_type return_type return O.O))))
+  :=
+  return_type:sttfa.type => return:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat return_type))) => sym_leibniz.sym_leibniz return_type (filter_nat_type.filter_nat_type return_type return O.O) (return O.O) (eq_filter_nat_type_O.eq_filter_nat_type_O return_type return).
+

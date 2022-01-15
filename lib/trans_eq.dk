@@ -1,0 +1,5 @@
+def trans_eq :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.forall A (z:(sttfa.etap (sttfa.p A)) => sttfa.impl (eq.eq A x y) (sttfa.impl (eq.eq A y z) (eq.eq A x z)))))))
+  :=
+  A:sttfa.type => x:(sttfa.etap (sttfa.p A)) => y:(sttfa.etap (sttfa.p A)) => z:(sttfa.etap (sttfa.p A)) => H1:(sttfa.eps (eq.eq A x y)) => H2:(sttfa.eps (eq.eq A y z)) => eq_ind_r.eq_ind_r A y (x0:(sttfa.etap (sttfa.p A)) => eq.eq A x0 z) (rewrite_l.rewrite_l A x (__:(sttfa.etap (sttfa.p A)) => eq.eq A __ z) (rewrite_l.rewrite_l A x (__:(sttfa.etap (sttfa.p A)) => eq.eq A x __) (refl.refl A x) z (rewrite_r.rewrite_r A y (__:(sttfa.etap (sttfa.p A)) => eq.eq A __ z) H2 x H1)) y H1) x H1.
+

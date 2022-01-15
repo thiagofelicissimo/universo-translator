@@ -1,0 +1,5 @@
+def not_le_Sn_O :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => Not.Not (le.le (S.S n) O.O)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => nmk.nmk (le.le (S.S n) O.O) (Hlen0:(sttfa.eps (le.le (S.S n) O.O)) => eq_match_nat_type_O.eq_match_nat_type_O sttfa.bool False.False (p:(sttfa.etap (sttfa.p nat.nat)) => True.True) (y:(sttfa.etap (sttfa.p sttfa.bool)) => y) (lt_to_not_zero.lt_to_not_zero n O.O Hlen0)).
+

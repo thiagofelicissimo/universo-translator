@@ -1,0 +1,5 @@
+def sym_not_eq :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.impl (Not.Not (eq.eq A x y)) (Not.Not (eq.eq A y x))))))
+  :=
+  A:sttfa.type => x:(sttfa.etap (sttfa.p A)) => y:(sttfa.etap (sttfa.p A)) => auto:(sttfa.eps (Not.Not (eq.eq A x y))) => nmk.nmk (eq.eq A y x) (auto':(sttfa.eps (eq.eq A y x)) => absurd.absurd (eq.eq A x y) (rewrite_r.rewrite_r A x (__:(sttfa.etap (sttfa.p A)) => eq.eq A x __) (refl.refl A x) y auto') auto).
+

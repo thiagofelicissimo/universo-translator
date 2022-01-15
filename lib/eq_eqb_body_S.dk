@@ -1,0 +1,5 @@
+def eq_eqb_body_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat bool.bool) (eqb_body.eqb_body (S.S n)) (m:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type bool.bool false.false (q:(sttfa.etap (sttfa.p nat.nat)) => eqb.eqb n q) m)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz (sttfa.arrow nat.nat bool.bool) (eqb_body.eqb_body (S.S n)) (m:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type bool.bool false.false (q:(sttfa.etap (sttfa.p nat.nat)) => eqb.eqb n q) m) (axiom_eqb_body_S.axiom_eqb_body_S n).
+

@@ -1,0 +1,5 @@
+def monotonic_le_minus_r :
+  sttfa.eps (sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (q:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le q p) (le.le (minus.minus n p) (minus.minus n q))))))
+  :=
+  p:(sttfa.etap (sttfa.p nat.nat)) => q:(sttfa.etap (sttfa.p nat.nat)) => n:(sttfa.etap (sttfa.p nat.nat)) => lepq:(sttfa.eps (le.le q p)) => le_plus_to_minus.le_plus_to_minus n p (minus.minus n q) (transitive_le.transitive_le n (plus.plus (minus.minus n q) q) (plus.plus (minus.minus n q) p) (le_plus_minus_m_m.le_plus_minus_m_m n q) (monotonic_le_plus_r.monotonic_le_plus_r (minus.minus n q) q p lepq)).
+

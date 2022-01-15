@@ -1,0 +1,3 @@
+match_bool_type :
+  sttfa.etap (sttfa.forallK (return:sttfa.type => sttfa.p (sttfa.arrow return (sttfa.arrow return (sttfa.arrow bool.bool return))))).
+

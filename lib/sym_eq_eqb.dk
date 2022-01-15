@@ -1,0 +1,5 @@
+def sym_eq_eqb :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat bool.bool) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat bool.bool) eqb_body.eqb_body n) (eqb.eqb n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => sym_leibniz.sym_leibniz (sttfa.arrow nat.nat bool.bool) (eqb.eqb n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat bool.bool) eqb_body.eqb_body n) (eq_eqb.eq_eqb n).
+

@@ -1,0 +1,5 @@
+def le_n_O_to_eq :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le n O.O) (eq.eq nat.nat O.O n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => match_nat_prop.match_nat_prop (__:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le __ O.O) (eq.eq nat.nat O.O __)) (auto:(sttfa.eps (le.le O.O O.O)) => refl.refl nat.nat O.O) (a:(sttfa.etap (sttfa.p nat.nat)) => abs:(sttfa.eps (le.le (S.S a) O.O)) => falsity.falsity (eq.eq nat.nat O.O (S.S a)) (absurd.absurd (le.le (S.S a) O.O) abs (not_le_Sn_O.not_le_Sn_O a))) n.
+

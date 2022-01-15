@@ -1,0 +1,5 @@
+def eq_eqb :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat bool.bool) (eqb.eqb n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat bool.bool) eqb_body.eqb_body n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz (sttfa.arrow nat.nat bool.bool) (eqb.eqb n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat bool.bool) eqb_body.eqb_body n) (axiom_eqb.axiom_eqb n).
+

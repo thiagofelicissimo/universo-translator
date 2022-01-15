@@ -1,0 +1,5 @@
+def eq_rect_r :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (a:(sttfa.etap (sttfa.p A)) => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.impl (eq.eq A x a) (sttfa.forall (sttfa.arrow A sttfa.bool) (P:(sttfa.etap (sttfa.p (sttfa.arrow A sttfa.bool))) => sttfa.impl (P a) (P x)))))))
+  :=
+  A:sttfa.type => a:(sttfa.etap (sttfa.p A)) => x:(sttfa.etap (sttfa.p A)) => p:(sttfa.eps (eq.eq A x a)) => eq_ind.eq_ind A x (__:(sttfa.etap (sttfa.p A)) => sttfa.forall (sttfa.arrow A sttfa.bool) (P:(sttfa.etap (sttfa.p (sttfa.arrow A sttfa.bool))) => sttfa.impl (P __) (P x))) (P:(sttfa.etap (sttfa.p (sttfa.arrow A sttfa.bool))) => auto:(sttfa.eps (P x)) => auto) a p.
+

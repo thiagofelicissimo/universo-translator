@@ -1,0 +1,5 @@
+def monotonic_pred :
+  sttfa.eps (monotonic.monotonic nat.nat le.le pred.pred)
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => lenm:(sttfa.eps (le.le n m)) => le_ind.le_ind n (x_417:(sttfa.etap (sttfa.p nat.nat)) => le.le (pred.pred n) (pred.pred x_417)) (le_n.le_n (pred.pred n)) (m0:(sttfa.etap (sttfa.p nat.nat)) => _x_419:(sttfa.eps (le.le n m0)) => _x_421:(sttfa.eps (le.le (pred.pred n) (pred.pred m0))) => transitive_le.transitive_le (pred.pred n) n (pred.pred (S.S m0)) (le_pred_n.le_pred_n n) (sym_eq_match_nat_type_S.sym_eq_match_nat_type_S nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) m0 (y:(sttfa.etap (sttfa.p nat.nat)) => le.le n y) _x_419)) m lenm.
+

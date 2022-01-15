@@ -1,0 +1,3 @@
+match_nat_type :
+  sttfa.etap (sttfa.forallK (return:sttfa.type => sttfa.p (sttfa.arrow return (sttfa.arrow (sttfa.arrow nat.nat return) (sttfa.arrow nat.nat return))))).
+

@@ -1,0 +1,5 @@
+def rewrite_r :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall (sttfa.arrow A sttfa.bool) (P:(sttfa.etap (sttfa.p (sttfa.arrow A sttfa.bool))) => sttfa.impl (P x) (sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.impl (eq.eq A y x) (P y)))))))
+  :=
+  A:sttfa.type => x:(sttfa.etap (sttfa.p A)) => P:(sttfa.etap (sttfa.p (sttfa.arrow A sttfa.bool))) => Hx:(sttfa.eps (P x)) => y:(sttfa.etap (sttfa.p A)) => Heq:(sttfa.eps (eq.eq A y x)) => eq_ind.eq_ind A x (__:(sttfa.etap (sttfa.p A)) => P __) Hx y (sym_eq.sym_eq A y x Heq).
+

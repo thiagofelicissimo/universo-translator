@@ -1,0 +1,5 @@
+def reflexive_divides :
+  sttfa.eps (reflexive.reflexive nat.nat divides.divides)
+  :=
+  x:(sttfa.etap (sttfa.p nat.nat)) => quotient.quotient x x (S.S O.O) (rewrite_r.rewrite_r nat.nat (times.times x (S.S O.O)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (times.times x (S.S O.O))) (refl.refl nat.nat (times.times x (S.S O.O))) x (times_n_1.times_n_1 x)).
+

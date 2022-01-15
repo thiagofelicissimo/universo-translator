@@ -1,0 +1,5 @@
+def notb :
+  sttfa.etap (sttfa.p (sttfa.arrow bool.bool bool.bool))
+  :=
+  b:(sttfa.etap (sttfa.p bool.bool)) => match_bool_type.match_bool_type bool.bool false.false true.true b.
+

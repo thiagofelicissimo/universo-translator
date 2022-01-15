@@ -1,0 +1,5 @@
+def iso :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat (sttfa.arrow nat.nat (sttfa.arrow (sttfa.arrow nat.nat bool.bool) (sttfa.arrow (sttfa.arrow nat.nat bool.bool) (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow (sttfa.arrow nat.nat nat.nat) sttfa.bool)))))))
+  :=
+  n1:(sttfa.etap (sttfa.p nat.nat)) => n2:(sttfa.etap (sttfa.p nat.nat)) => p1:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat bool.bool))) => p2:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat bool.bool))) => f1:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => f2:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => ex.ex (sttfa.arrow nat.nat nat.nat) (h:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => ex.ex (sttfa.arrow nat.nat nat.nat) (k:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => And.And (And.And (sttfa.forall nat.nat (i:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt i n1) (sttfa.impl (eq.eq bool.bool (p1 i) true.true) (eq.eq nat.nat (f1 i) (f2 (h i)))))) (sub_hk.sub_hk h k n1 n2 p1 p2 f1 f2)) (sub_hk.sub_hk k h n2 n1 p2 p1 f2 f1))).
+

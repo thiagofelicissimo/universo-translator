@@ -1,0 +1,5 @@
+def le_O_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => le.le O.O n))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => nat_ind.nat_ind (le.le O.O) (le_n.le_n O.O) (x_366:(sttfa.etap (sttfa.p nat.nat)) => _x_368:(sttfa.eps (le.le O.O x_366)) => le_S.le_S O.O x_366 _x_368) n.
+

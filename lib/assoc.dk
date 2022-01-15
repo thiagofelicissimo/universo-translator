@@ -1,0 +1,5 @@
+def assoc :
+  sttfa.eps (sttfa.forall nat.nat (a:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (b:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (c:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (times.times a (times.times b c)) (times.times (times.times a b) c)))))
+  :=
+  a:(sttfa.etap (sttfa.p nat.nat)) => b:(sttfa.etap (sttfa.p nat.nat)) => c:(sttfa.etap (sttfa.p nat.nat)) => sym_eq.sym_eq nat.nat (times.times (times.times a b) c) (times.times a (times.times b c)) (associative_times.associative_times a b c).
+

@@ -1,0 +1,5 @@
+def lt_to_le_to_lt :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt n m) (sttfa.impl (le.le m p) (lt.lt n p))))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => p:(sttfa.etap (sttfa.p nat.nat)) => H:(sttfa.eps (lt.lt n m)) => H1:(sttfa.eps (le.le m p)) => le_ind.le_ind m (x_417:(sttfa.etap (sttfa.p nat.nat)) => lt.lt n x_417) H (m0:(sttfa.etap (sttfa.p nat.nat)) => _x_419:(sttfa.eps (le.le m m0)) => _x_421:(sttfa.eps (lt.lt n m0)) => transitive_lt.transitive_lt n m0 (S.S m0) _x_421 (eq_coerc.eq_coerc (le.le (S.S m0) (plus.plus O.O (S.S m0))) (le.le (S.S m0) (S.S m0)) (le_plus_n.le_plus_n O.O (S.S m0)) (rewrite_l.rewrite_l nat.nat (S.S m0) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (S.S m0) __) (le.le (S.S m0) (S.S m0))) (refl.refl sttfa.bool (le.le (S.S m0) (S.S m0))) (plus.plus O.O (S.S m0)) (plus_O_n.plus_O_n (S.S m0))))) p H1.
+

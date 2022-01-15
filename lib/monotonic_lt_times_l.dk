@@ -1,0 +1,5 @@
+def monotonic_lt_times_l :
+  sttfa.eps (sttfa.forall nat.nat (c:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt O.O c) (monotonic.monotonic nat.nat lt.lt (t:(sttfa.etap (sttfa.p nat.nat)) => times.times t c))))
+  :=
+  c:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (lt.lt O.O c)) => x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => auto':(sttfa.eps (lt.lt x y)) => eq_coerc.eq_coerc (le.le (S.S (times.times c x)) (times.times c y)) (le.le (S.S (times.times x c)) (times.times y c)) (monotonic_lt_times_r.monotonic_lt_times_r c auto x y auto') (rewrite_r.rewrite_r nat.nat (times.times c x) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (S.S (times.times c x)) (times.times c y)) (le.le (S.S __) (times.times y c))) (rewrite_r.rewrite_r nat.nat (times.times c y) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (S.S (times.times c x)) (times.times c y)) (le.le (S.S (times.times c x)) __)) (refl.refl sttfa.bool (le.le (S.S (times.times c x)) (times.times c y))) (times.times y c) (commutative_times.commutative_times y c)) (times.times x c) (commutative_times.commutative_times x c)).
+

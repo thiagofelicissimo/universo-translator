@@ -1,0 +1,5 @@
+def times_O_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O (times.times O.O n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => sym_eq_times.sym_eq_times O.O (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat O.O (y n)) (sym_eq_filter_nat_type_O.sym_eq_filter_nat_type_O (sttfa.arrow nat.nat nat.nat) times_body.times_body (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat O.O (y n)) (sym_eq_times_body_O.sym_eq_times_body_O (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat O.O (y n)) (refl.refl nat.nat O.O))).
+

@@ -1,0 +1,5 @@
+def sym_eq_times_body_O :
+  sttfa.eps (leibniz.leibniz (sttfa.arrow nat.nat nat.nat) (m:(sttfa.etap (sttfa.p nat.nat)) => O.O) (times_body.times_body O.O))
+  :=
+  sym_leibniz.sym_leibniz (sttfa.arrow nat.nat nat.nat) (times_body.times_body O.O) (m:(sttfa.etap (sttfa.p nat.nat)) => O.O) eq_times_body_O.eq_times_body_O.
+

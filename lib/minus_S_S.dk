@@ -1,0 +1,5 @@
+def minus_S_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (minus.minus (S.S n) (S.S m)) (minus.minus n m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => eq_match_nat_type_S.eq_match_nat_type_S nat.nat (S.S n) (q:(sttfa.etap (sttfa.p nat.nat)) => minus.minus n q) m (y:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (minus.minus (S.S n) (S.S m)) y) (eq_minus_body_S.eq_minus_body_S n (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat (minus.minus (S.S n) (S.S m)) (y (S.S m))) (eq_filter_nat_type_S.eq_filter_nat_type_S (sttfa.arrow nat.nat nat.nat) minus_body.minus_body n (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat (minus.minus (S.S n) (S.S m)) (y (S.S m))) (eq_minus.eq_minus (S.S n) (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat (minus.minus (S.S n) (S.S m)) (y (S.S m))) (refl.refl nat.nat (minus.minus (S.S n) (S.S m)))))).
+

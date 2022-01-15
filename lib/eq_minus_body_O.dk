@@ -1,0 +1,5 @@
+def eq_minus_body_O :
+  sttfa.eps (leibniz.leibniz (sttfa.arrow nat.nat nat.nat) (minus_body.minus_body O.O) (m:(sttfa.etap (sttfa.p nat.nat)) => O.O))
+  :=
+  equal_leibniz.equal_leibniz (sttfa.arrow nat.nat nat.nat) (minus_body.minus_body O.O) (m:(sttfa.etap (sttfa.p nat.nat)) => O.O) axiom_minus_body_O.axiom_minus_body_O.
+

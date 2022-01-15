@@ -1,0 +1,5 @@
+def bijn :
+  sttfa.etap (sttfa.p (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat sttfa.bool)))
+  :=
+  f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le m n) (ex.ex nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => And.And (le.le p n) (eq.eq nat.nat (f p) m)))).
+

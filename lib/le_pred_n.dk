@@ -1,0 +1,5 @@
+def le_pred_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => le.le (pred.pred n) n))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => nat_ind.nat_ind (_x_365:(sttfa.etap (sttfa.p nat.nat)) => le.le (pred.pred _x_365) _x_365) (eq_match_nat_type_O.eq_match_nat_type_O nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) (y:(sttfa.etap (sttfa.p nat.nat)) => le.le (match_nat_type.match_nat_type nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) O.O) y) (le_n.le_n (pred.pred O.O))) (x_366:(sttfa.etap (sttfa.p nat.nat)) => _x_368:(sttfa.eps (le.le (pred.pred x_366) x_366)) => eq_match_nat_type_S.eq_match_nat_type_S nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) x_366 (y:(sttfa.etap (sttfa.p nat.nat)) => le.le (pred.pred (S.S x_366)) (S.S y)) (le_n_Sn.le_n_Sn (pred.pred (S.S x_366)))) n.
+

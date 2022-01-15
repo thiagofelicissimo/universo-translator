@@ -1,0 +1,3 @@
+le_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => le.le n n)).
+

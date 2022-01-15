@@ -5,3 +5,6 @@ final
 output
 **/*.dko
 **/*.swp
+depend.pdf
+graph.dot
+

@@ -1,0 +1,5 @@
+def not_eq_to_eqb_false :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (Not.Not (eq.eq nat.nat n m)) (eq.eq bool.bool (eqb.eqb n m) false.false))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => noteq:(sttfa.eps (Not.Not (eq.eq nat.nat n m))) => eqb_elim.eqb_elim n m (__:(sttfa.etap (sttfa.p bool.bool)) => eq.eq bool.bool __ false.false) (Heq:(sttfa.eps (eq.eq nat.nat n m)) => falsity.falsity (eq.eq bool.bool true.true false.false) (absurd.absurd (eq.eq nat.nat n m) (rewrite_l.rewrite_l nat.nat n (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n __) (refl.refl nat.nat n) m Heq) noteq)) (auto:(sttfa.eps (Not.Not (eq.eq nat.nat n m))) => refl.refl bool.bool false.false).
+

@@ -1,0 +1,5 @@
+def injn :
+  sttfa.etap (sttfa.p (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat sttfa.bool)))
+  :=
+  f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (i:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (j:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le i n) (sttfa.impl (le.le j n) (sttfa.impl (eq.eq nat.nat (f i) (f j)) (eq.eq nat.nat i j))))).
+

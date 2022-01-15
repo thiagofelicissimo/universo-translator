@@ -1,0 +1,5 @@
+def times_times :
+  sttfa.eps (sttfa.forall nat.nat (x:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (y:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (z:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (times.times x (times.times y z)) (times.times y (times.times x z))))))
+  :=
+  x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => z:(sttfa.etap (sttfa.p nat.nat)) => rewrite_r.rewrite_r nat.nat (times.times y (times.times x z)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (times.times y (times.times x z))) (refl.refl nat.nat (times.times y (times.times x z))) (times.times x (times.times y z)) (rewrite_l.rewrite_l nat.nat (times.times (times.times x y) z) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (times.times y (times.times x z))) (rewrite_l.rewrite_l nat.nat (times.times y x) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (times.times __ z) (times.times y (times.times x z))) (associative_times.associative_times y x z) (times.times x y) (commutative_times.commutative_times y x)) (times.times x (times.times y z)) (associative_times.associative_times x y z)).
+

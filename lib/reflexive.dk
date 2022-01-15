@@ -1,0 +1,5 @@
+def reflexive :
+  sttfa.etap (sttfa.forallK (A:sttfa.type => sttfa.p (sttfa.arrow (sttfa.arrow A (sttfa.arrow A sttfa.bool)) sttfa.bool)))
+  :=
+  A:sttfa.type => R:(sttfa.etap (sttfa.p (sttfa.arrow A (sttfa.arrow A sttfa.bool)))) => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => R x x).
+

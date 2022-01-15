@@ -1,0 +1,5 @@
+def eq_plus :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat nat.nat) (plus.plus n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat nat.nat) plus_body.plus_body n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz (sttfa.arrow nat.nat nat.nat) (plus.plus n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat nat.nat) plus_body.plus_body n) (axiom_plus.axiom_plus n).
+

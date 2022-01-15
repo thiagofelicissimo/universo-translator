@@ -1,0 +1,5 @@
+def not_eq_to_le_to_lt :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (Not.Not (eq.eq nat.nat n m)) (sttfa.impl (le.le n m) (lt.lt n m)))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => Hneq:(sttfa.eps (Not.Not (eq.eq nat.nat n m))) => Hle:(sttfa.eps (le.le n m)) => match_Or_prop.match_Or_prop (lt.lt n m) (eq.eq nat.nat n m) (lt.lt n m) (auto:(sttfa.eps (lt.lt n m)) => auto) (Heq:(sttfa.eps (eq.eq nat.nat n m)) => not_le_to_lt.not_le_to_lt m n (not_to_not.not_to_not (le.le m n) (eq.eq nat.nat n m) (auto:(sttfa.eps (le.le m n)) => rewrite_l.rewrite_l nat.nat n (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n __) (refl.refl nat.nat n) m Heq) Hneq)) (le_to_or_lt_eq.le_to_or_lt_eq n m Hle).
+

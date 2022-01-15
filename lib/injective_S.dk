@@ -1,0 +1,5 @@
+def injective_S :
+  sttfa.eps (injective_.injective_ nat.nat nat.nat S.S)
+  :=
+  x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (eq.eq nat.nat (S.S x) (S.S y))) => rewrite_l.rewrite_l nat.nat y (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ y) (refl.refl nat.nat y) x (rewrite_r.rewrite_r nat.nat (pred.pred (S.S x)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat y __) (rewrite_r.rewrite_r nat.nat (S.S y) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat y (pred.pred __)) (pred_Sn.pred_Sn y) (S.S x) auto) x (pred_Sn.pred_Sn x)).
+

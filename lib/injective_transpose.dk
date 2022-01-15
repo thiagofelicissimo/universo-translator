@@ -1,0 +1,5 @@
+def injective_transpose :
+  sttfa.eps (sttfa.forall nat.nat (i:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (j:(sttfa.etap (sttfa.p nat.nat)) => injective_.injective_ nat.nat nat.nat (transpose.transpose i j))))
+  :=
+  i:(sttfa.etap (sttfa.p nat.nat)) => j:(sttfa.etap (sttfa.p nat.nat)) => x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (eq.eq nat.nat (transpose.transpose i j x) (transpose.transpose i j y))) => rewrite_r.rewrite_r nat.nat y (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ y) (refl.refl nat.nat y) x (rewrite_l.rewrite_l nat.nat (transpose.transpose i j (transpose.transpose i j x)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ y) (rewrite_r.rewrite_r nat.nat (transpose.transpose i j y) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (transpose.transpose i j __) y) (transpose_transpose.transpose_transpose i j y) (transpose.transpose i j x) auto) x (transpose_transpose.transpose_transpose i j x)).
+

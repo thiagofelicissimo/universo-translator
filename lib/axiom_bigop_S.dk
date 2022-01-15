@@ -1,0 +1,3 @@
+axiom_bigop_S :
+  sttfa.eps (sttfa.forallP (H:sttfa.type => sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => equal.equal (sttfa.arrow (sttfa.arrow nat.nat bool.bool) (sttfa.arrow H (sttfa.arrow (sttfa.arrow H (sttfa.arrow H H)) (sttfa.arrow (sttfa.arrow nat.nat H) H)))) (bigop.bigop H (S.S n)) (bigop_body.bigop_body H (S.S n))))).
+

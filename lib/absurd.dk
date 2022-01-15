@@ -1,0 +1,5 @@
+def absurd :
+  sttfa.eps (sttfa.forall sttfa.bool (A:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl A (sttfa.impl (Not.Not A) False.False)))
+  :=
+  A:(sttfa.etap (sttfa.p sttfa.bool)) => H:(sttfa.eps A) => Hn:(sttfa.eps (Not.Not A)) => Not_ind.Not_ind A False.False (_x_80:(sttfa.eps (sttfa.impl A False.False)) => _x_80 H) Hn.
+

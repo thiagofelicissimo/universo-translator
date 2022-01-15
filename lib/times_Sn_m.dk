@@ -1,0 +1,5 @@
+def times_Sn_m :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (plus.plus m (times.times n m)) (times.times (S.S n) m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => sym_eq_times.sym_eq_times (S.S n) (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat (plus.plus m (times.times n m)) (y m)) (sym_eq_filter_nat_type_S.sym_eq_filter_nat_type_S (sttfa.arrow nat.nat nat.nat) times_body.times_body n (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat (plus.plus m (times.times n m)) (y m)) (sym_eq_times_body_S.sym_eq_times_body_S n (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat (plus.plus m (times.times n m)) (y m)) (refl.refl nat.nat (plus.plus m (times.times n m))))).
+

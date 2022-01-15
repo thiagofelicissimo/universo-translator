@@ -1,0 +1,5 @@
+def plus_O_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n (plus.plus O.O n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => sym_eq_plus.sym_eq_plus O.O (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat n (y n)) (sym_eq_filter_nat_type_O.sym_eq_filter_nat_type_O (sttfa.arrow nat.nat nat.nat) plus_body.plus_body (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat n (y n)) (sym_eq_plus_body_O.sym_eq_plus_body_O (y:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => eq.eq nat.nat n (y n)) (refl.refl nat.nat n))).
+

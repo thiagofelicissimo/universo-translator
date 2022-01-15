@@ -1,0 +1,5 @@
+def transitive_congruent :
+  sttfa.eps (sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => transitive.transitive nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => congruent.congruent n m p)))
+  :=
+  p:(sttfa.etap (sttfa.p nat.nat)) => x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => z:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (congruent.congruent x y p)) => auto':(sttfa.eps (congruent.congruent y z p)) => rewrite_l.rewrite_l nat.nat (mod.mod x p) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (mod.mod x p) __) (refl.refl nat.nat (mod.mod x p)) (mod.mod z p) (rewrite_r.rewrite_r nat.nat (mod.mod y p) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (mod.mod z p)) auto' (mod.mod x p) auto).
+

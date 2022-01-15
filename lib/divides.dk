@@ -1,0 +1,3 @@
+divides :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat (sttfa.arrow nat.nat sttfa.bool))).
+

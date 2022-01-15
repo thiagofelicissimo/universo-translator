@@ -1,0 +1,5 @@
+def le_S_S_to_le :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le (S.S n) (S.S m)) (le.le n m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (le.le (S.S n) (S.S m))) => eq_match_nat_type_S.eq_match_nat_type_S nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) m (y:(sttfa.etap (sttfa.p nat.nat)) => le.le n y) (eq_match_nat_type_S.eq_match_nat_type_S nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) n (y:(sttfa.etap (sttfa.p nat.nat)) => le.le y (match_nat_type.match_nat_type nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) (S.S m))) (monotonic_pred.monotonic_pred (S.S n) (S.S m) auto)).
+

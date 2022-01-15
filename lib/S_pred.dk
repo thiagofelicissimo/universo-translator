@@ -1,0 +1,5 @@
+def S_pred :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt O.O n) (eq.eq nat.nat (S.S (pred.pred n)) n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => posn:(sttfa.eps (lt.lt O.O n)) => match_le_prop.match_le_prop (S.S O.O) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (S.S (pred.pred __)) __) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (S.S __) (S.S O.O)) (refl.refl nat.nat (S.S O.O)) (pred.pred (S.S O.O)) (pred_Sn.pred_Sn O.O)) (m:(sttfa.etap (sttfa.p nat.nat)) => rewrite_l.rewrite_l nat.nat m (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (S.S __) (S.S m)) (refl.refl nat.nat (S.S m)) (pred.pred (S.S m)) (pred_Sn.pred_Sn m)) n posn.
+

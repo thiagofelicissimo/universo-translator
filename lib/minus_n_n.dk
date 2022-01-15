@@ -1,0 +1,5 @@
+def minus_n_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O (minus.minus n n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => nat_ind.nat_ind (_x_365:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O (minus.minus _x_365 _x_365)) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O __) (refl.refl nat.nat O.O) (minus.minus O.O O.O) (minus_O_n.minus_O_n O.O)) (x_366:(sttfa.etap (sttfa.p nat.nat)) => _x_368:(sttfa.eps (eq.eq nat.nat O.O (minus.minus x_366 x_366))) => rewrite_r.rewrite_r nat.nat (minus.minus x_366 x_366) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O __) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O __) (refl.refl nat.nat O.O) (minus.minus x_366 x_366) _x_368) (minus.minus (S.S x_366) (S.S x_366)) (minus_S_S.minus_S_S x_366 x_366)) n.
+

@@ -1,0 +1,3 @@
+conj :
+  sttfa.eps (sttfa.forall sttfa.bool (A:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.forall sttfa.bool (B:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl A (sttfa.impl B (And.And A B))))).
+

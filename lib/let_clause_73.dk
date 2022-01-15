@@ -1,0 +1,5 @@
+def let_clause_73 :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt O.O p) (sttfa.forall nat.nat (x134:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (x135:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (x136:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (plus.plus x134 (plus.plus x135 x136)) (plus.plus x135 (plus.plus x134 x136))))))))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => p:(sttfa.etap (sttfa.p nat.nat)) => posp:(sttfa.eps (lt.lt O.O p)) => x134:(sttfa.etap (sttfa.p nat.nat)) => x135:(sttfa.etap (sttfa.p nat.nat)) => x136:(sttfa.etap (sttfa.p nat.nat)) => rewrite_l.rewrite_l nat.nat (plus.plus (plus.plus x135 x134) x136) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (plus.plus x134 (plus.plus x135 x136)) __) (assoc_plus1.assoc_plus1 x136 x135 x134) (plus.plus x135 (plus.plus x134 x136)) (associative_plus.associative_plus x135 x134 x136).
+

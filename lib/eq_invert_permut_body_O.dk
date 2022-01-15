@@ -1,0 +1,5 @@
+def eq_invert_permut_body_O :
+  sttfa.eps (leibniz.leibniz (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat nat.nat)) (invert_permut_body.invert_permut_body O.O) (f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => m:(sttfa.etap (sttfa.p nat.nat)) => match_bool_type.match_bool_type nat.nat O.O O.O (eqb.eqb m (f O.O))))
+  :=
+  equal_leibniz.equal_leibniz (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat nat.nat)) (invert_permut_body.invert_permut_body O.O) (f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => m:(sttfa.etap (sttfa.p nat.nat)) => match_bool_type.match_bool_type nat.nat O.O O.O (eqb.eqb m (f O.O))) axiom_invert_permut_body_O.axiom_invert_permut_body_O.
+

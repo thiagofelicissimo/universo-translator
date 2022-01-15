@@ -1,0 +1,5 @@
+def associative :
+  sttfa.etap (sttfa.forallK (A:sttfa.type => sttfa.p (sttfa.arrow (sttfa.arrow A (sttfa.arrow A A)) sttfa.bool)))
+  :=
+  A:sttfa.type => f:(sttfa.etap (sttfa.p (sttfa.arrow A (sttfa.arrow A A)))) => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.forall A (z:(sttfa.etap (sttfa.p A)) => eq.eq A (f (f x y) z) (f x (f y z))))).
+

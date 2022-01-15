@@ -1,0 +1,5 @@
+def not_eq_true_false :
+  sttfa.eps (Not.Not (eq.eq bool.bool true.true false.false))
+  :=
+  nmk.nmk (eq.eq bool.bool true.true false.false) (Heq:(sttfa.eps (eq.eq bool.bool true.true false.false)) => eq_match_bool_type_false.eq_match_bool_type_false sttfa.bool (sttfa.forall sttfa.bool (P:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl P P)) (sttfa.forall sttfa.bool (P:(sttfa.etap (sttfa.p sttfa.bool)) => P)) (x:(sttfa.etap (sttfa.p sttfa.bool)) => x) (eq_match_bool_type_true.eq_match_bool_type_true sttfa.bool (match_bool_type.match_bool_type sttfa.bool (sttfa.forall sttfa.bool (P:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl P P)) (sttfa.forall sttfa.bool (P:(sttfa.etap (sttfa.p sttfa.bool)) => P)) false.false) (match_bool_type.match_bool_type sttfa.bool (sttfa.forall sttfa.bool (P:(sttfa.etap (sttfa.p sttfa.bool)) => P)) (sttfa.forall sttfa.bool (P:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl P P)) false.false) (x:(sttfa.etap (sttfa.p sttfa.bool)) => x) (bool_discr.bool_discr true.true false.false Heq)) False.False).
+

@@ -1,0 +1,5 @@
+def injective_ :
+  sttfa.etap (sttfa.forallK (A:sttfa.type => sttfa.forallK (B:sttfa.type => sttfa.p (sttfa.arrow (sttfa.arrow A B) sttfa.bool))))
+  :=
+  A:sttfa.type => B:sttfa.type => f:(sttfa.etap (sttfa.p (sttfa.arrow A B))) => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.impl (eq.eq B (f x) (f y)) (eq.eq A x y))).
+

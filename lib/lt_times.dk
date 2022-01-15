@@ -1,0 +1,5 @@
+def lt_times :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (q:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt n m) (sttfa.impl (lt.lt p q) (lt.lt (times.times n p) (times.times m q))))))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => p:(sttfa.etap (sttfa.p nat.nat)) => q:(sttfa.etap (sttfa.p nat.nat)) => ltnm:(sttfa.eps (lt.lt n m)) => ltpq:(sttfa.eps (lt.lt p q)) => lt_to_le_to_lt_times.lt_to_le_to_lt_times n m p q ltnm (lt_to_le.lt_to_le p q ltpq) (ltn_to_ltO.ltn_to_ltO p q ltpq).
+

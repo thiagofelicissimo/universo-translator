@@ -1,0 +1,5 @@
+def eq_to_eqb_true :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (eq.eq nat.nat n m) (eq.eq bool.bool (eqb.eqb n m) true.true))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (eq.eq nat.nat n m)) => rewrite_l.rewrite_l nat.nat n (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq bool.bool (eqb.eqb n __) true.true) (rewrite_r.rewrite_r bool.bool true.true (__:(sttfa.etap (sttfa.p bool.bool)) => eq.eq bool.bool __ true.true) (refl.refl bool.bool true.true) (eqb.eqb n n) (eqb_n_n.eqb_n_n n)) m auto.
+

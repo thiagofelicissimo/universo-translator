@@ -1,0 +1,5 @@
+def not_to_not :
+  sttfa.eps (sttfa.forall sttfa.bool (A:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.forall sttfa.bool (B:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl (sttfa.impl A B) (sttfa.impl (Not.Not B) (Not.Not A)))))
+  :=
+  A:(sttfa.etap (sttfa.p sttfa.bool)) => B:(sttfa.etap (sttfa.p sttfa.bool)) => auto:(sttfa.eps (sttfa.impl A B)) => auto':(sttfa.eps (Not.Not B)) => nmk.nmk A (auto'':(sttfa.eps A) => absurd.absurd B (auto auto'') auto').
+

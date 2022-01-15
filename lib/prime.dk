@@ -1,0 +1,5 @@
+def prime :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat sttfa.bool))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => And.And (lt.lt (S.S O.O) n) (sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (divides.divides m n) (sttfa.impl (lt.lt (S.S O.O) m) (eq.eq nat.nat m n)))).
+

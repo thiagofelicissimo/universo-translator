@@ -1,0 +1,3 @@
+Not_ind :
+  sttfa.eps (sttfa.forall sttfa.bool (A:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.forall sttfa.bool (Q:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl (sttfa.impl (sttfa.impl A False.False) Q) (sttfa.impl (Not.Not A) Q)))).
+

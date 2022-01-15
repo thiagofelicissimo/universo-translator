@@ -1,0 +1,5 @@
+def not_eq_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (Not.Not (eq.eq nat.nat n m)) (Not.Not (eq.eq nat.nat (S.S n) (S.S m))))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (Not.Not (eq.eq nat.nat n m))) => not_to_not.not_to_not (eq.eq nat.nat (S.S n) (S.S m)) (eq.eq nat.nat n m) (auto':(sttfa.eps (eq.eq nat.nat (S.S n) (S.S m))) => rewrite_l.rewrite_l nat.nat m (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ m) (refl.refl nat.nat m) n (rewrite_r.rewrite_r nat.nat (pred.pred (S.S n)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat m __) (rewrite_r.rewrite_r nat.nat (S.S m) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat m (pred.pred __)) (pred_Sn.pred_Sn m) (S.S n) auto') n (pred_Sn.pred_Sn n))) auto.
+

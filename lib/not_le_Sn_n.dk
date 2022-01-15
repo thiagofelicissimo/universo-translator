@@ -1,0 +1,5 @@
+def not_le_Sn_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => Not.Not (le.le (S.S n) n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => nat_ind.nat_ind (_x_365:(sttfa.etap (sttfa.p nat.nat)) => Not.Not (le.le (S.S _x_365) _x_365)) (not_le_Sn_O.not_le_Sn_O O.O) (x_366:(sttfa.etap (sttfa.p nat.nat)) => _x_368:(sttfa.eps (Not.Not (le.le (S.S x_366) x_366))) => not_le_to_not_le_S_S.not_le_to_not_le_S_S (S.S x_366) x_366 _x_368) n.
+

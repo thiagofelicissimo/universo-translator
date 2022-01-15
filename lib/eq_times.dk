@@ -1,0 +1,5 @@
+def eq_times :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat nat.nat) (times.times n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat nat.nat) times_body.times_body n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz (sttfa.arrow nat.nat nat.nat) (times.times n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat nat.nat) times_body.times_body n) (axiom_times.axiom_times n).
+

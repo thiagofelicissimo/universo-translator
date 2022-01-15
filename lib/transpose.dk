@@ -1,0 +1,5 @@
+def transpose :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat (sttfa.arrow nat.nat (sttfa.arrow nat.nat nat.nat))))
+  :=
+  i:(sttfa.etap (sttfa.p nat.nat)) => j:(sttfa.etap (sttfa.p nat.nat)) => n:(sttfa.etap (sttfa.p nat.nat)) => match_bool_type.match_bool_type nat.nat j (match_bool_type.match_bool_type nat.nat i n (eqb.eqb n j)) (eqb.eqb n i).
+

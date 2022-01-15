@@ -1,0 +1,5 @@
+def RC_reflexive :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall (sttfa.arrow A (sttfa.arrow A sttfa.bool)) (R:(sttfa.etap (sttfa.p (sttfa.arrow A (sttfa.arrow A sttfa.bool)))) => reflexive.reflexive A (RC.RC A R))))
+  :=
+  A:sttfa.type => R:(sttfa.etap (sttfa.p (sttfa.arrow A (sttfa.arrow A sttfa.bool)))) => x:(sttfa.etap (sttfa.p A)) => or_intror.or_intror (R x x) (eq.eq A x x) (refl.refl A x).
+

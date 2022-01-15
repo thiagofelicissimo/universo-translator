@@ -1,0 +1,5 @@
+def not_eq_O_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => Not.Not (eq.eq nat.nat O.O (S.S n))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => nmk.nmk (eq.eq nat.nat O.O (S.S n)) (eqOS:(sttfa.eps (eq.eq nat.nat O.O (S.S n))) => eq_match_nat_type_O.eq_match_nat_type_O sttfa.bool False.False (p:(sttfa.etap (sttfa.p nat.nat)) => True.True) (y:(sttfa.etap (sttfa.p sttfa.bool)) => y) (eq_ind_r.eq_ind_r nat.nat (S.S n) (x:(sttfa.etap (sttfa.p nat.nat)) => not_zero.not_zero x) (sym_eq_match_nat_type_S.sym_eq_match_nat_type_S sttfa.bool False.False (p:(sttfa.etap (sttfa.p nat.nat)) => True.True) n (y:(sttfa.etap (sttfa.p sttfa.bool)) => y) I.I) O.O eqOS)).
+

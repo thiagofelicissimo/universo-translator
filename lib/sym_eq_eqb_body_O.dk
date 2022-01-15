@@ -1,0 +1,5 @@
+def sym_eq_eqb_body_O :
+  sttfa.eps (leibniz.leibniz (sttfa.arrow nat.nat bool.bool) (m:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type bool.bool true.true (q:(sttfa.etap (sttfa.p nat.nat)) => false.false) m) (eqb_body.eqb_body O.O))
+  :=
+  sym_leibniz.sym_leibniz (sttfa.arrow nat.nat bool.bool) (eqb_body.eqb_body O.O) (m:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type bool.bool true.true (q:(sttfa.etap (sttfa.p nat.nat)) => false.false) m) eq_eqb_body_O.eq_eqb_body_O.
+

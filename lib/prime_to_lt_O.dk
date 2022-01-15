@@ -1,0 +1,5 @@
+def prime_to_lt_O :
+  sttfa.eps (sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (prime.prime p) (lt.lt O.O p)))
+  :=
+  p:(sttfa.etap (sttfa.p nat.nat)) => _clearme:(sttfa.eps (prime.prime p)) => match_And_prop.match_And_prop (lt.lt (S.S O.O) p) (sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (divides.divides m p) (sttfa.impl (lt.lt (S.S O.O) m) (eq.eq nat.nat m p)))) (lt.lt O.O p) (lt1p:(sttfa.eps (lt.lt (S.S O.O) p)) => auto:(sttfa.eps (sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (divides.divides m p) (sttfa.impl (lt.lt (S.S O.O) m) (eq.eq nat.nat m p))))) => lt_S_to_lt.lt_S_to_lt O.O p lt1p) _clearme.
+

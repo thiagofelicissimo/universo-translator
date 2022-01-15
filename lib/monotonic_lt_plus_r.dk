@@ -1,0 +1,5 @@
+def monotonic_lt_plus_r :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => monotonic.monotonic nat.nat lt.lt (m:(sttfa.etap (sttfa.p nat.nat)) => plus.plus n m)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (lt.lt x y)) => eq_coerc.eq_coerc (le.le (plus.plus n (S.S x)) (plus.plus n y)) (le.le (S.S (plus.plus n x)) (plus.plus n y)) (monotonic_le_plus_r.monotonic_le_plus_r n (S.S x) y auto) (rewrite_r.rewrite_r nat.nat (plus.plus n (S.S x)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (plus.plus n (S.S x)) (plus.plus n y)) (le.le __ (plus.plus n y))) (refl.refl sttfa.bool (le.le (plus.plus n (S.S x)) (plus.plus n y))) (S.S (plus.plus n x)) (plus_n_Sm.plus_n_Sm n x)).
+

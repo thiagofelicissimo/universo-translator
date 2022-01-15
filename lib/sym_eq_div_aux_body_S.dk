@@ -1,0 +1,5 @@
+def sym_eq_div_aux_body_S :
+  sttfa.eps (sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat (sttfa.arrow nat.nat nat.nat)) (m:(sttfa.etap (sttfa.p nat.nat)) => n:(sttfa.etap (sttfa.p nat.nat)) => match_bool_type.match_bool_type nat.nat O.O (S.S (div_aux.div_aux p (minus.minus m (S.S n)) n)) (leb.leb m n)) (div_aux_body.div_aux_body (S.S p))))
+  :=
+  p:(sttfa.etap (sttfa.p nat.nat)) => sym_leibniz.sym_leibniz (sttfa.arrow nat.nat (sttfa.arrow nat.nat nat.nat)) (div_aux_body.div_aux_body (S.S p)) (m:(sttfa.etap (sttfa.p nat.nat)) => n:(sttfa.etap (sttfa.p nat.nat)) => match_bool_type.match_bool_type nat.nat O.O (S.S (div_aux.div_aux p (minus.minus m (S.S n)) n)) (leb.leb m n)) (eq_div_aux_body_S.eq_div_aux_body_S p).
+

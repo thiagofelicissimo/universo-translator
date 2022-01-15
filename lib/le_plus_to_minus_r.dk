@@ -1,0 +1,5 @@
+def le_plus_to_minus_r :
+  sttfa.eps (sttfa.forall nat.nat (a:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (b:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (c:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le (plus.plus a b) c) (le.le a (minus.minus c b))))))
+  :=
+  a:(sttfa.etap (sttfa.p nat.nat)) => b:(sttfa.etap (sttfa.p nat.nat)) => c:(sttfa.etap (sttfa.p nat.nat)) => H:(sttfa.eps (le.le (plus.plus a b) c)) => le_plus_to_le_r.le_plus_to_le_r b a (minus.minus c b) (transitive_le.transitive_le (plus.plus a b) c (plus.plus (minus.minus c b) b) H (le_plus_minus_m_m.le_plus_minus_m_m c b)).
+

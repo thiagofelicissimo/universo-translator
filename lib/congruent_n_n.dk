@@ -1,0 +1,5 @@
+def congruent_n_n :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (p:(sttfa.etap (sttfa.p nat.nat)) => congruent.congruent n n p)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => p:(sttfa.etap (sttfa.p nat.nat)) => refl.refl nat.nat (mod.mod n p).
+

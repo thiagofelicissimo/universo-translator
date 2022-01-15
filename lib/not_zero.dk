@@ -1,0 +1,5 @@
+def not_zero :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat sttfa.bool))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type sttfa.bool False.False (p:(sttfa.etap (sttfa.p nat.nat)) => True.True) n.
+

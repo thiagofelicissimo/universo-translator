@@ -1,0 +1,3 @@
+axiom_match_bool_type_true :
+  sttfa.eps (sttfa.forallP (return:sttfa.type => sttfa.forall return (case_true:(sttfa.etap (sttfa.p return)) => sttfa.forall return (case_false:(sttfa.etap (sttfa.p return)) => equal.equal return (match_bool_type.match_bool_type return case_true case_false true.true) case_true)))).
+

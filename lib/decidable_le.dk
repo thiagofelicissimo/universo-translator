@@ -1,0 +1,5 @@
+def decidable_le :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => decidable.decidable (le.le n m))))
+  :=
+  nat_elim2.nat_elim2 (__:(sttfa.etap (sttfa.p nat.nat)) => _0:(sttfa.etap (sttfa.p nat.nat)) => decidable.decidable (le.le __ _0)) (n:(sttfa.etap (sttfa.p nat.nat)) => or_introl.or_introl (le.le O.O n) (Not.Not (le.le O.O n)) (le_O_n.le_O_n n)) (n:(sttfa.etap (sttfa.p nat.nat)) => or_intror.or_intror (le.le (S.S n) O.O) (Not.Not (le.le (S.S n) O.O)) (not_le_Sn_O.not_le_Sn_O n)) (n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => _clearme:(sttfa.eps (decidable.decidable (le.le n m))) => match_Or_prop.match_Or_prop (le.le n m) (Not.Not (le.le n m)) (decidable.decidable (le.le (S.S n) (S.S m))) (auto:(sttfa.eps (le.le n m)) => or_introl.or_introl (le.le (S.S n) (S.S m)) (Not.Not (le.le (S.S n) (S.S m))) (le_S_S.le_S_S n m auto)) (auto:(sttfa.eps (Not.Not (le.le n m))) => or_intror.or_intror (le.le (S.S n) (S.S m)) (Not.Not (le.le (S.S n) (S.S m))) (not_le_to_not_le_S_S.not_le_to_not_le_S_S n m auto)) _clearme).
+

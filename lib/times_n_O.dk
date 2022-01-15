@@ -1,0 +1,5 @@
+def times_n_O :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O (times.times n O.O)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => nat_ind.nat_ind (_x_365:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O (times.times _x_365 O.O)) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O __) (refl.refl nat.nat O.O) (times.times O.O O.O) (times_O_n.times_O_n O.O)) (x_366:(sttfa.etap (sttfa.p nat.nat)) => _x_368:(sttfa.eps (eq.eq nat.nat O.O (times.times x_366 O.O))) => rewrite_l.rewrite_l nat.nat (plus.plus O.O (times.times x_366 O.O)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O __) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O (plus.plus O.O __)) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat O.O __) (refl.refl nat.nat O.O) (plus.plus O.O O.O) (plus_O_n.plus_O_n O.O)) (times.times x_366 O.O) _x_368) (times.times (S.S x_366) O.O) (times_Sn_m.times_Sn_m x_366 O.O)) n.
+

@@ -1,0 +1,3 @@
+bigop_body :
+  sttfa.etap (sttfa.forallK (H:sttfa.type => sttfa.p (sttfa.arrow nat.nat (sttfa.arrow (sttfa.arrow nat.nat bool.bool) (sttfa.arrow H (sttfa.arrow (sttfa.arrow H (sttfa.arrow H H)) (sttfa.arrow (sttfa.arrow nat.nat H) H))))))).
+

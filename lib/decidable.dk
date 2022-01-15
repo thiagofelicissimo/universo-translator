@@ -1,0 +1,5 @@
+def decidable :
+  sttfa.etap (sttfa.p (sttfa.arrow sttfa.bool sttfa.bool))
+  :=
+  A:(sttfa.etap (sttfa.p sttfa.bool)) => Or.Or A (Not.Not A).
+

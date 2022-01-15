@@ -1,0 +1,5 @@
+def eq_fact_body_O :
+  sttfa.eps (leibniz.leibniz nat.nat (fact_body.fact_body O.O) (S.S O.O))
+  :=
+  equal_leibniz.equal_leibniz nat.nat (fact_body.fact_body O.O) (S.S O.O) axiom_fact_body_O.axiom_fact_body_O.
+

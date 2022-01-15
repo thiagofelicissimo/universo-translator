@@ -1,0 +1,5 @@
+def eq_minus_body_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat nat.nat) (minus_body.minus_body (S.S n)) (m:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type nat.nat (S.S n) (q:(sttfa.etap (sttfa.p nat.nat)) => minus.minus n q) m)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz (sttfa.arrow nat.nat nat.nat) (minus_body.minus_body (S.S n)) (m:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type nat.nat (S.S n) (q:(sttfa.etap (sttfa.p nat.nat)) => minus.minus n q) m) (axiom_minus_body_S.axiom_minus_body_S n).
+

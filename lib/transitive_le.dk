@@ -1,0 +1,5 @@
+def transitive_le :
+  sttfa.eps (transitive.transitive nat.nat le.le)
+  :=
+  a:(sttfa.etap (sttfa.p nat.nat)) => b:(sttfa.etap (sttfa.p nat.nat)) => c:(sttfa.etap (sttfa.p nat.nat)) => leab:(sttfa.eps (le.le a b)) => lebc:(sttfa.eps (le.le b c)) => le_ind.le_ind b (x_417:(sttfa.etap (sttfa.p nat.nat)) => le.le a x_417) leab (m:(sttfa.etap (sttfa.p nat.nat)) => _x_419:(sttfa.eps (le.le b m)) => _x_421:(sttfa.eps (le.le a m)) => le_S.le_S a m _x_421) c lebc.
+

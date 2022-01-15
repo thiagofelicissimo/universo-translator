@@ -1,0 +1,5 @@
+def eq_leb_body_O :
+  sttfa.eps (leibniz.leibniz (sttfa.arrow nat.nat bool.bool) (leb_body.leb_body O.O) (m:(sttfa.etap (sttfa.p nat.nat)) => true.true))
+  :=
+  equal_leibniz.equal_leibniz (sttfa.arrow nat.nat bool.bool) (leb_body.leb_body O.O) (m:(sttfa.etap (sttfa.p nat.nat)) => true.true) axiom_leb_body_O.axiom_leb_body_O.
+

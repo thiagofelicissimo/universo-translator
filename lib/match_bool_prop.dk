@@ -1,0 +1,3 @@
+match_bool_prop :
+  sttfa.eps (sttfa.forall (sttfa.arrow bool.bool sttfa.bool) (return:(sttfa.etap (sttfa.p (sttfa.arrow bool.bool sttfa.bool))) => sttfa.impl (return true.true) (sttfa.impl (return false.false) (sttfa.forall bool.bool (z:(sttfa.etap (sttfa.p bool.bool)) => return z))))).
+

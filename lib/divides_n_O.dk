@@ -1,0 +1,5 @@
+def divides_n_O :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => divides.divides n O.O))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => quotient.quotient n O.O O.O (rewrite_r.rewrite_r nat.nat (times.times n O.O) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (times.times n O.O)) (refl.refl nat.nat (times.times n O.O)) O.O (times_n_O.times_n_O n)).
+

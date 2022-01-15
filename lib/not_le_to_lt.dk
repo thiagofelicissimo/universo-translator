@@ -1,0 +1,5 @@
+def not_le_to_lt :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (Not.Not (le.le n m)) (lt.lt m n))))
+  :=
+  nat_elim2.nat_elim2 (__:(sttfa.etap (sttfa.p nat.nat)) => _0:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (Not.Not (le.le __ _0)) (lt.lt _0 __)) (n:(sttfa.etap (sttfa.p nat.nat)) => abs:(sttfa.eps (Not.Not (le.le O.O n))) => falsity.falsity (lt.lt n O.O) (absurd.absurd (le.le O.O n) (eq_coerc.eq_coerc (le.le O.O (plus.plus n O.O)) (le.le O.O n) (le_plus_n.le_plus_n n O.O) (rewrite_l.rewrite_l nat.nat n (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le O.O __) (le.le O.O n)) (refl.refl sttfa.bool (le.le O.O n)) (plus.plus n O.O) (plus_n_O.plus_n_O n))) abs)) (n:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (Not.Not (le.le (S.S n) O.O))) => lt_O_S.lt_O_S n) (n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => Hind:(sttfa.eps (sttfa.impl (Not.Not (le.le n m)) (lt.lt m n))) => HnotleSS:(sttfa.eps (Not.Not (le.le (S.S n) (S.S m)))) => le_S_S.le_S_S (S.S m) n (Hind (not_le_S_S_to_not_le.not_le_S_S_to_not_le n m HnotleSS))).
+

@@ -1,0 +1,5 @@
+def eqb_true_to_eq :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (eq.eq bool.bool (eqb.eqb n m) true.true) (eq.eq nat.nat n m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => eqb_elim.eqb_elim n m (__:(sttfa.etap (sttfa.p bool.bool)) => sttfa.impl (eq.eq bool.bool __ true.true) (eq.eq nat.nat n m)) (auto:(sttfa.eps (eq.eq nat.nat n m)) => auto':(sttfa.eps (eq.eq bool.bool true.true true.true)) => rewrite_l.rewrite_l nat.nat n (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n __) (refl.refl nat.nat n) m auto) (__:(sttfa.eps (Not.Not (eq.eq nat.nat n m))) => abs:(sttfa.eps (eq.eq bool.bool false.false true.true)) => falsity.falsity (eq.eq nat.nat n m) (absurd.absurd (eq.eq bool.bool true.true false.false) (rewrite_r.rewrite_r bool.bool true.true (__1:(sttfa.etap (sttfa.p bool.bool)) => eq.eq bool.bool true.true __1) (refl.refl bool.bool true.true) false.false abs) not_eq_true_false.not_eq_true_false)).
+

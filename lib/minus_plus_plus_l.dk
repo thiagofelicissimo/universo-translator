@@ -1,0 +1,5 @@
+def minus_plus_plus_l :
+  sttfa.eps (sttfa.forall nat.nat (x:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (y:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (h:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (minus.minus (plus.plus x h) (plus.plus y h)) (minus.minus x y)))))
+  :=
+  x:(sttfa.etap (sttfa.p nat.nat)) => y:(sttfa.etap (sttfa.p nat.nat)) => h:(sttfa.etap (sttfa.p nat.nat)) => rewrite_l.rewrite_l nat.nat (minus.minus (minus.minus (plus.plus x h) y) h) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (minus.minus x y)) (rewrite_r.rewrite_r nat.nat (minus.minus x y) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat __ (minus.minus x y)) (refl.refl nat.nat (minus.minus x y)) (minus.minus (minus.minus (plus.plus x h) y) h) (rewrite_r.rewrite_r nat.nat (minus.minus (plus.plus x h) h) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (minus.minus (minus.minus (plus.plus x h) y) h) (minus.minus __ y)) (minus_minus_comm.minus_minus_comm (plus.plus x h) y h) x (minus_plus_m_m.minus_plus_m_m x h))) (minus.minus (plus.plus x h) (plus.plus y h)) (minus_plus.minus_plus (plus.plus x h) y h).
+

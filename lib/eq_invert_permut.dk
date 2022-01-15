@@ -1,0 +1,5 @@
+def eq_invert_permut :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat nat.nat)) (invert_permut.invert_permut n) (filter_nat_type.filter_nat_type (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat nat.nat)) invert_permut_body.invert_permut_body n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat nat.nat)) (invert_permut.invert_permut n) (filter_nat_type.filter_nat_type (sttfa.arrow (sttfa.arrow nat.nat nat.nat) (sttfa.arrow nat.nat nat.nat)) invert_permut_body.invert_permut_body n) (axiom_invert_permut.axiom_invert_permut n).
+

@@ -1,0 +1,5 @@
+def injn_Sn_n :
+  sttfa.eps (sttfa.forall (sttfa.arrow nat.nat nat.nat) (f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (injn.injn f (S.S n)) (injn.injn f n))))
+  :=
+  f:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))) => n:(sttfa.etap (sttfa.p nat.nat)) => H:(sttfa.eps (injn.injn f (S.S n))) => i:(sttfa.etap (sttfa.p nat.nat)) => j:(sttfa.etap (sttfa.p nat.nat)) => lei:(sttfa.eps (le.le i n)) => lej:(sttfa.eps (le.le j n)) => eqf:(sttfa.eps (eq.eq nat.nat (f i) (f j))) => H i j (le_S.le_S i n lei) (le_S.le_S j n lej) (rewrite_l.rewrite_l nat.nat (f i) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (f i) __) (refl.refl nat.nat (f i)) (f j) eqf).
+

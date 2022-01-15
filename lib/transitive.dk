@@ -1,0 +1,5 @@
+def transitive :
+  sttfa.etap (sttfa.forallK (A:sttfa.type => sttfa.p (sttfa.arrow (sttfa.arrow A (sttfa.arrow A sttfa.bool)) sttfa.bool)))
+  :=
+  A:sttfa.type => R:(sttfa.etap (sttfa.p (sttfa.arrow A (sttfa.arrow A sttfa.bool)))) => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.forall A (z:(sttfa.etap (sttfa.p A)) => sttfa.impl (R x y) (sttfa.impl (R y z) (R x z))))).
+

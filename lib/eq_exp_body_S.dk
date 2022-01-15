@@ -1,0 +1,5 @@
+def eq_exp_body_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz nat.nat (exp_body.exp_body n (S.S m)) (times.times (exp.exp n m) n))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => equal_leibniz.equal_leibniz nat.nat (exp_body.exp_body n (S.S m)) (times.times (exp.exp n m) n) (axiom_exp_body_S.axiom_exp_body_S n m).
+

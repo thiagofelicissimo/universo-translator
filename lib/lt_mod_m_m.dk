@@ -1,0 +1,5 @@
+def lt_mod_m_m :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt O.O m) (lt.lt (mod.mod n m) m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => match_nat_prop.match_nat_prop (__:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt O.O __) (lt.lt (mod.mod n __) __)) (abs:(sttfa.eps (lt.lt O.O O.O)) => falsity.falsity (lt.lt (mod.mod n O.O) O.O) (absurd.absurd (le.le (S.S O.O) O.O) abs (not_le_Sn_O.not_le_Sn_O O.O))) (p:(sttfa.etap (sttfa.p nat.nat)) => sym_eq_match_nat_type_S.sym_eq_match_nat_type_S nat.nat n (q:(sttfa.etap (sttfa.p nat.nat)) => mod_aux.mod_aux n n q) p (y:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt O.O (S.S p)) (lt.lt y (S.S p))) (__:(sttfa.eps (lt.lt O.O (S.S p))) => le_S_S.le_S_S (mod_aux.mod_aux n n p) p (le_mod_aux_m_m.le_mod_aux_m_m n n p (le_n.le_n n)))) m.
+

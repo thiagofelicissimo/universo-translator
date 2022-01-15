@@ -1,0 +1,3 @@
+axiom_fact_body_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => equal.equal nat.nat (fact_body.fact_body (S.S n)) (times.times (fact.fact n) (S.S n)))).
+

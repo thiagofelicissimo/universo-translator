@@ -1,0 +1,5 @@
+def monotonic :
+  sttfa.etap (sttfa.forallK (A:sttfa.type => sttfa.p (sttfa.arrow (sttfa.arrow A (sttfa.arrow A sttfa.bool)) (sttfa.arrow (sttfa.arrow A A) sttfa.bool))))
+  :=
+  A:sttfa.type => R:(sttfa.etap (sttfa.p (sttfa.arrow A (sttfa.arrow A sttfa.bool)))) => f:(sttfa.etap (sttfa.p (sttfa.arrow A A))) => sttfa.forall A (x:(sttfa.etap (sttfa.p A)) => sttfa.forall A (y:(sttfa.etap (sttfa.p A)) => sttfa.impl (R x y) (R (f x) (f y)))).
+

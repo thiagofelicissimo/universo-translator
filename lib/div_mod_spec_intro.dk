@@ -1,0 +1,3 @@
+div_mod_spec_intro :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (q:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (r:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt r m) (sttfa.impl (eq.eq nat.nat n (plus.plus (times.times q m) r)) (div_mod_spec.div_mod_spec n m q r))))))).
+

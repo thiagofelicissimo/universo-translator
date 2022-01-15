@@ -1,0 +1,5 @@
+def lt_to_not_zero :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt n m) (not_zero.not_zero m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => Hlt:(sttfa.eps (lt.lt n m)) => le_ind.le_ind (S.S n) (x_417:(sttfa.etap (sttfa.p nat.nat)) => not_zero.not_zero x_417) (sym_eq_match_nat_type_S.sym_eq_match_nat_type_S sttfa.bool False.False (p:(sttfa.etap (sttfa.p nat.nat)) => True.True) n (y:(sttfa.etap (sttfa.p sttfa.bool)) => y) I.I) (m0:(sttfa.etap (sttfa.p nat.nat)) => _x_419:(sttfa.eps (le.le (S.S n) m0)) => _x_421:(sttfa.eps (not_zero.not_zero m0)) => sym_eq_match_nat_type_S.sym_eq_match_nat_type_S sttfa.bool False.False (p:(sttfa.etap (sttfa.p nat.nat)) => True.True) m0 (y:(sttfa.etap (sttfa.p sttfa.bool)) => y) I.I) m Hlt.
+

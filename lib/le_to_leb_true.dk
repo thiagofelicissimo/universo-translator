@@ -1,0 +1,5 @@
+def le_to_leb_true :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le n m) (eq.eq bool.bool (leb.leb n m) true.true))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => leb_elim.leb_elim n m (__:(sttfa.etap (sttfa.p bool.bool)) => sttfa.impl (le.le n m) (eq.eq bool.bool __ true.true)) (auto:(sttfa.eps (le.le n m)) => auto':(sttfa.eps (le.le n m)) => refl.refl bool.bool true.true) (H:(sttfa.eps (Not.Not (le.le n m))) => H1:(sttfa.eps (le.le n m)) => falsity.falsity (eq.eq bool.bool false.false true.true) (absurd.absurd (le.le n m) H1 H)).
+

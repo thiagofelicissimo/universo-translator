@@ -1,0 +1,5 @@
+def le_plus_b :
+  sttfa.eps (sttfa.forall nat.nat (b:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (le.le (plus.plus n b) m) (le.le n m)))))
+  :=
+  b:(sttfa.etap (sttfa.p nat.nat)) => n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (le.le (plus.plus n b) m)) => transitive_le.transitive_le n (plus.plus n b) m (eq_coerc.eq_coerc (le.le n (plus.plus b n)) (le.le n (plus.plus n b)) (le_plus_n.le_plus_n b n) (rewrite_r.rewrite_r nat.nat (plus.plus b n) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le n (plus.plus b n)) (le.le n __)) (refl.refl sttfa.bool (le.le n (plus.plus b n))) (plus.plus n b) (commutative_plus.commutative_plus n b))) auto.
+

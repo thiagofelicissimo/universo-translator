@@ -1,0 +1,3 @@
+refl_equal :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.eta A) => equal.equal A x x))).
+

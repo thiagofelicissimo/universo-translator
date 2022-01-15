@@ -1,0 +1,5 @@
+def sym_eq_fact :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz nat.nat (filter_nat_type.filter_nat_type nat.nat fact_body.fact_body n) (fact.fact n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => sym_leibniz.sym_leibniz nat.nat (fact.fact n) (filter_nat_type.filter_nat_type nat.nat fact_body.fact_body n) (eq_fact.eq_fact n).
+

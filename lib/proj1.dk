@@ -1,0 +1,5 @@
+def proj1 :
+  sttfa.eps (sttfa.forall sttfa.bool (A:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.forall sttfa.bool (B:(sttfa.etap (sttfa.p sttfa.bool)) => sttfa.impl (And.And A B) A)))
+  :=
+  A:(sttfa.etap (sttfa.p sttfa.bool)) => B:(sttfa.etap (sttfa.p sttfa.bool)) => AB:(sttfa.eps (And.And A B)) => match_And_prop.match_And_prop A B A (_x_120:(sttfa.eps A) => _x_119:(sttfa.eps B) => _x_120) AB.
+

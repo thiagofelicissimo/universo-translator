@@ -1,0 +1,5 @@
+def pred :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat nat.nat))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => match_nat_type.match_nat_type nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) n.
+

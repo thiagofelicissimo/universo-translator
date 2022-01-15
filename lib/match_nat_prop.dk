@@ -1,0 +1,3 @@
+match_nat_prop :
+  sttfa.eps (sttfa.forall (sttfa.arrow nat.nat sttfa.bool) (return:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat sttfa.bool))) => sttfa.impl (return O.O) (sttfa.impl (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => return (S.S n))) (sttfa.forall nat.nat (z:(sttfa.etap (sttfa.p nat.nat)) => return z))))).
+

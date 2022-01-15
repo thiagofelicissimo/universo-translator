@@ -1,0 +1,5 @@
+def congruent :
+  sttfa.etap (sttfa.p (sttfa.arrow nat.nat (sttfa.arrow nat.nat (sttfa.arrow nat.nat sttfa.bool))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => p:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat (mod.mod n p) (mod.mod m p).
+

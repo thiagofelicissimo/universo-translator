@@ -1,0 +1,5 @@
+def sym_eq_minus :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => leibniz.leibniz (sttfa.arrow nat.nat nat.nat) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat nat.nat) minus_body.minus_body n) (minus.minus n)))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => sym_leibniz.sym_leibniz (sttfa.arrow nat.nat nat.nat) (minus.minus n) (filter_nat_type.filter_nat_type (sttfa.arrow nat.nat nat.nat) minus_body.minus_body n) (eq_minus.eq_minus n).
+

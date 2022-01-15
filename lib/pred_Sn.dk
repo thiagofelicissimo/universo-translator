@@ -1,0 +1,5 @@
+def pred_Sn :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n (pred.pred (S.S n))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => sym_eq_match_nat_type_S.sym_eq_match_nat_type_S nat.nat O.O (p:(sttfa.etap (sttfa.p nat.nat)) => p) n (y:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n y) (refl.refl nat.nat n).
+

@@ -1,0 +1,5 @@
+def lt_S_to_lt :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (lt.lt (S.S n) m) (lt.lt n m))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (lt.lt (S.S n) m)) => transitive_lt.transitive_lt n (S.S n) m (eq_coerc.eq_coerc (le.le (S.S n) (plus.plus O.O (S.S n))) (le.le (S.S n) (S.S n)) (le_plus_n.le_plus_n O.O (S.S n)) (rewrite_l.rewrite_l nat.nat (S.S n) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le (S.S n) __) (le.le (S.S n) (S.S n))) (refl.refl sttfa.bool (le.le (S.S n) (S.S n))) (plus.plus O.O (S.S n)) (plus_O_n.plus_O_n (S.S n)))) auto.
+

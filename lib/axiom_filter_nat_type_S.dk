@@ -1,0 +1,3 @@
+axiom_filter_nat_type_S :
+  sttfa.eps (sttfa.forallP (return_type:sttfa.type => sttfa.forall (sttfa.arrow nat.nat return_type) (return:(sttfa.etap (sttfa.p (sttfa.arrow nat.nat return_type))) => sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => equal.equal return_type (filter_nat_type.filter_nat_type return_type return (S.S n)) (return (S.S n)))))).
+

@@ -1,0 +1,5 @@
+def not_le_to_not_le_S_S :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => sttfa.forall nat.nat (m:(sttfa.etap (sttfa.p nat.nat)) => sttfa.impl (Not.Not (le.le n m)) (Not.Not (le.le (S.S n) (S.S m))))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => m:(sttfa.etap (sttfa.p nat.nat)) => auto:(sttfa.eps (Not.Not (le.le n m))) => not_to_not.not_to_not (le.le (S.S n) (S.S m)) (le.le n m) (auto':(sttfa.eps (le.le (S.S n) (S.S m))) => eq_coerc.eq_coerc (le.le (pred.pred (S.S n)) (pred.pred (S.S m))) (le.le n m) (monotonic_pred.monotonic_pred (S.S n) (S.S m) auto') (rewrite_l.rewrite_l nat.nat n (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le __ (pred.pred (S.S m))) (le.le n m)) (rewrite_l.rewrite_l nat.nat m (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq sttfa.bool (le.le n __) (le.le n m)) (refl.refl sttfa.bool (le.le n m)) (pred.pred (S.S m)) (pred_Sn.pred_Sn m)) (pred.pred (S.S n)) (pred_Sn.pred_Sn n))) auto.
+

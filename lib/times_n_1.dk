@@ -1,0 +1,5 @@
+def times_n_1 :
+  sttfa.eps (sttfa.forall nat.nat (n:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n (times.times n (S.S O.O))))
+  :=
+  n:(sttfa.etap (sttfa.p nat.nat)) => rewrite_l.rewrite_l nat.nat (plus.plus n (times.times n O.O)) (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n __) (rewrite_l.rewrite_l nat.nat O.O (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n (plus.plus n __)) (rewrite_l.rewrite_l nat.nat n (__:(sttfa.etap (sttfa.p nat.nat)) => eq.eq nat.nat n __) (refl.refl nat.nat n) (plus.plus n O.O) (plus_n_O.plus_n_O n)) (times.times n O.O) (times_n_O.times_n_O n)) (times.times n (S.S O.O)) (times_n_Sm.times_n_Sm n O.O).
+
