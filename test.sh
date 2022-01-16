@@ -122,6 +122,7 @@ main () {
 		a) runall=true ;;
 		v) verbose=true ;;
 		h) usage ; return 0 ;;
+		*) usage ; return 1 ;;
 	esac
 	done
 
