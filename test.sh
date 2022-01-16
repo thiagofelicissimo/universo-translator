@@ -11,6 +11,7 @@ echo \
 -u	run Universo on FILES
 -m	Merge solution in final/
 -a	run All of the above
+-d	resolve Dependencies
 -v	Verbose mode
 -h	show Help
 "
@@ -76,7 +77,7 @@ run_universo () {
 	OCAMLRUNPARAM='b' \
 	dune exec universo -- -o output \
 	--theory theory/cts.dk --config config/universo_cfg.dk \
-	-I theory/ \
+	-I theory/ -l \
 	$(printf "ctslib/%s " $files)
 }
 
@@ -108,6 +109,44 @@ merge_solution () {
 }
 
 
+calc_deps () {
+	echo $(dkdep -i $1 | \
+	sed -e 's/^[^ ]* : [^ ]*\.dk //' -e 's/\.dko/.dk/g')
+}
+
+
+resolve_deps_aux () {
+	if [[ -z "${visited[$1]}" ]]; then
+		visited[$1]="v"
+		local dp=($(calc_deps $1))
+		for f in ${dp[@]}
+		do
+			if [ "$f" ] ; then
+				resolve_deps_aux $f
+			fi
+		done
+		visited[$1]=$((++counter))
+	fi
+}
+
+resolve_deps () {
+	declare -A visited
+	counter=2
+	for arg in $@
+	do
+		resolve_deps_aux $arg
+	done
+
+	for k in "${!visited[@]}"; do
+		# echo "visited = ${visited["$k"]}"
+		# echo "k = $k"
+		printf "%05d%s\n" ${visited["$k"]} $k
+	done | sort | sed 's/^.....//' | tr '\n' ' '
+}
+
+
+
+
 # main <file1> <file2> ...
 main () {
 
@@ -120,6 +159,7 @@ main () {
 		u) rununiv=true ;;
 		m) mergesol=true ;;
 		a) runall=true ;;
+		d) resdeps=true ;;
 		v) verbose=true ;;
 		h) usage ; return 0 ;;
 		*) usage ; return 1 ;;
@@ -127,8 +167,6 @@ main () {
 	done
 
 	shift $((OPTIND - 1))
-
-	echo "@ = $@ ; # = $#"
 
 	# use all files in lib/ if no args are given
 	if [ $# -eq 0 ]; then
@@ -142,7 +180,12 @@ main () {
 	# ensure files are in order of dependencies
 	files=$(cd lib && dkdep -si $files)
 
+	if [[ $runall = true ]] || [[ $resdeps = true ]]; then
+		files=$(cd lib && resolve_deps $files)
+	fi
+
 	# echo "files = $files"
+
 
 	if [[ $runall = true ]] || [[ $theocomp = true ]]; then
 		echo "Checking theory files..."
