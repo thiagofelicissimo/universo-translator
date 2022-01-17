@@ -5,3 +5,4 @@ final
 output
 **/*.dko
 **/*.swp
+*.*~
