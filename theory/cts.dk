@@ -63,7 +63,7 @@ def triangle : Sort.
 def diamond : Sort.
 def box : Sort.
 def star : Sort.
-def ball : Sort.
+
 
 [] Axiom star box --> true.
 [] Axiom box triangle --> true.
@@ -73,13 +73,12 @@ def ball : Sort.
 
 [] Rule star star star --> true.
 [] Rule box box box --> true.
-[] Rule box box diamond --> true.
 [] Rule box star star --> true.
 [] Rule triangle star star --> true. (; ? ;)
 [] Rule triangle diamond diamond --> true. (; ? ;)
-[] Rule triangle triangle triangle --> true.
+[] Rule triangle box diamond --> true.
 
-[] Cumul box diamond --> true.
+
 
 
 (;---------- AGDA SPEC -----------;)

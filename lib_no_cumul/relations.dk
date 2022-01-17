@@ -1,0 +1,110 @@
+def reflexive :
+  sttfa.etap (sttfa.forallK' (A => sttfa.arrow (sttfa.arrow A (sttfa.arrow A sttfa.bool)) sttfa.bool))
+  :=
+  A:sttfa.type =>
+  R:(sttfa.eta (sttfa.arrow A (sttfa.arrow A sttfa.bool))) =>
+  sttfa.forall A (x:(sttfa.eta A) => R x x).
+
+def transitive :
+  sttfa.etap (sttfa.forallK' (A => sttfa.arrow (sttfa.arrow A (sttfa.arrow A sttfa.bool)) sttfa.bool))
+  :=
+  A:sttfa.type =>
+  R:(sttfa.eta (sttfa.arrow A (sttfa.arrow A sttfa.bool))) =>
+  sttfa.forall
+    A
+    (x:(sttfa.eta A) =>
+     sttfa.forall
+       A
+       (y:(sttfa.eta A) =>
+        sttfa.forall A (z:(sttfa.eta A) => sttfa.impl (R x y) (sttfa.impl (R y z) (R x z))))).
+
+def RC :
+  sttfa.etap
+    (sttfa.forallK'
+       (A =>
+        sttfa.arrow
+          (sttfa.arrow A (sttfa.arrow A sttfa.bool))
+          (sttfa.arrow A (sttfa.arrow A sttfa.bool))))
+  :=
+  A:sttfa.type =>
+  R:(sttfa.eta (sttfa.arrow A (sttfa.arrow A sttfa.bool))) =>
+  x:(sttfa.eta A) => y:(sttfa.eta A) => connectives.Or (R x y) (logic.eq A x y).
+
+def RC_reflexive :
+  sttfa.eps
+    (sttfa.forallP
+       (A:sttfa.type =>
+        sttfa.forall
+          (sttfa.arrow A (sttfa.arrow A sttfa.bool))
+          (R:(sttfa.eta (sttfa.arrow A (sttfa.arrow A sttfa.bool))) => reflexive A (RC A R))))
+  :=
+  A:sttfa.type =>
+  R:(sttfa.eta (sttfa.arrow A (sttfa.arrow A sttfa.bool))) =>
+  x:(sttfa.eta A) => connectives.or_intror (R x x) (logic.eq A x x) (logic.refl A x).
+
+def injective_ :
+  sttfa.etap
+    (sttfa.forallK (A:sttfa.type => sttfa.forallK' (A0 => sttfa.arrow (sttfa.arrow A A0) sttfa.bool)))
+  :=
+  A:sttfa.type =>
+  B:sttfa.type =>
+  f:(sttfa.eta (sttfa.arrow A B)) =>
+  sttfa.forall
+    A
+    (x:(sttfa.eta A) =>
+     sttfa.forall A (y:(sttfa.eta A) => sttfa.impl (logic.eq B (f x) (f y)) (logic.eq A x y))).
+
+def commutative :
+  sttfa.etap (sttfa.forallK' (A => sttfa.arrow (sttfa.arrow A (sttfa.arrow A A)) sttfa.bool))
+  :=
+  A:sttfa.type =>
+  f:(sttfa.eta (sttfa.arrow A (sttfa.arrow A A))) =>
+  sttfa.forall A (x:(sttfa.eta A) => sttfa.forall A (y:(sttfa.eta A) => logic.eq A (f x y) (f y x))).
+
+def associative :
+  sttfa.etap (sttfa.forallK' (A => sttfa.arrow (sttfa.arrow A (sttfa.arrow A A)) sttfa.bool))
+  :=
+  A:sttfa.type =>
+  f:(sttfa.eta (sttfa.arrow A (sttfa.arrow A A))) =>
+  sttfa.forall
+    A
+    (x:(sttfa.eta A) =>
+     sttfa.forall
+       A
+       (y:(sttfa.eta A) =>
+        sttfa.forall A (z:(sttfa.eta A) => logic.eq A (f (f x y) z) (f x (f y z))))).
+
+def monotonic :
+  sttfa.etap
+    (sttfa.forallK'
+       (A =>
+        sttfa.arrow
+          (sttfa.arrow A (sttfa.arrow A sttfa.bool))
+          (sttfa.arrow (sttfa.arrow A A) sttfa.bool)))
+  :=
+  A:sttfa.type =>
+  R:(sttfa.eta (sttfa.arrow A (sttfa.arrow A sttfa.bool))) =>
+  f:(sttfa.eta (sttfa.arrow A A)) =>
+  sttfa.forall
+    A
+    (x:(sttfa.eta A) => sttfa.forall A (y:(sttfa.eta A) => sttfa.impl (R x y) (R (f x) (f y)))).
+
+def distributive :
+  sttfa.etap
+    (sttfa.forallK'
+       (A =>
+        sttfa.arrow
+          (sttfa.arrow A (sttfa.arrow A A))
+          (sttfa.arrow (sttfa.arrow A (sttfa.arrow A A)) sttfa.bool)))
+  :=
+  A:sttfa.type =>
+  f:(sttfa.eta (sttfa.arrow A (sttfa.arrow A A))) =>
+  g:(sttfa.eta (sttfa.arrow A (sttfa.arrow A A))) =>
+  sttfa.forall
+    A
+    (x:(sttfa.eta A) =>
+     sttfa.forall
+       A
+       (y:(sttfa.eta A) =>
+        sttfa.forall A (z:(sttfa.eta A) => logic.eq A (f x (g y z)) (g (f x y) (f x z))))).
+

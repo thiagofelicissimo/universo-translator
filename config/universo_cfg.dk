@@ -1,12 +1,15 @@
 def elaboration : Type.
     [] cts.star --> cts.var.
     [] cts.box --> cts.var.
-    [] cts.ball --> cts.var.
     [] cts.triangle --> cts.var.
     [] cts.diamond --> cts.var.
     [] cts.sinf --> cts.var.
 
 def output : Type.
+
+
+def constraints : Type.
+
 
 
 def lra_specification : Type.

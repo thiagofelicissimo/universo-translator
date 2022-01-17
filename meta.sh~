@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+rm -rf *.dko output/ _build/ ctslib/ final/
+mkdir ctslib
+
+dkcheck -e --snf theory/*.dk
+
+for f in lib/*.dk
+do
+	echo "[dkmeta] converting $f"
+	
+	OCAMLRUNPARAM='b' \
+	dune exec dkmeta -- -I ./theory \
+	 -m meta/meta.dk $f > ctslib/$(basename $f)
+done

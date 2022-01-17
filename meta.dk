@@ -1,0 +1,2 @@
+[x] sttfa.etap (sttfa.p x) --> sttfa.eta x.
+[x] sttfa.forallK (A => sttfa.p (x A)) --> sttfa.forallK' (A => (x A)).

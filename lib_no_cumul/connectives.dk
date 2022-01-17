@@ -1,0 +1,126 @@
+True : sttfa.eta sttfa.bool.
+
+False : sttfa.eta sttfa.bool.
+
+Not : sttfa.eta (sttfa.arrow sttfa.bool sttfa.bool).
+
+And : sttfa.eta (sttfa.arrow sttfa.bool (sttfa.arrow sttfa.bool sttfa.bool)).
+
+Or : sttfa.eta (sttfa.arrow sttfa.bool (sttfa.arrow sttfa.bool sttfa.bool)).
+
+ex :
+  sttfa.etap (sttfa.forallK' (A => sttfa.arrow (sttfa.arrow A sttfa.bool) sttfa.bool)).
+
+equal :
+  sttfa.etap (sttfa.forallK' (A => sttfa.arrow A (sttfa.arrow A sttfa.bool))).
+
+I : sttfa.eps True.
+
+falsity :
+  sttfa.eps (sttfa.forall sttfa.bool (t:(sttfa.eta sttfa.bool) => sttfa.impl False t)).
+
+nmk :
+  sttfa.eps
+    (sttfa.forall sttfa.bool (A:(sttfa.eta sttfa.bool) => sttfa.impl (sttfa.impl A False) (Not A))).
+
+Not_ind :
+  sttfa.eps
+    (sttfa.forall
+       sttfa.bool
+       (A:(sttfa.eta sttfa.bool) =>
+        sttfa.forall
+          sttfa.bool
+          (Q:(sttfa.eta sttfa.bool) =>
+           sttfa.impl (sttfa.impl (sttfa.impl A False) Q) (sttfa.impl (Not A) Q)))).
+
+conj :
+  sttfa.eps
+    (sttfa.forall
+       sttfa.bool
+       (A:(sttfa.eta sttfa.bool) =>
+        sttfa.forall sttfa.bool (B:(sttfa.eta sttfa.bool) => sttfa.impl A (sttfa.impl B (And A B))))).
+
+match_And_prop :
+  sttfa.eps
+    (sttfa.forall
+       sttfa.bool
+       (A:(sttfa.eta sttfa.bool) =>
+        sttfa.forall
+          sttfa.bool
+          (B:(sttfa.eta sttfa.bool) =>
+           sttfa.forall
+             sttfa.bool
+             (return:(sttfa.eta sttfa.bool) =>
+              sttfa.impl (sttfa.impl A (sttfa.impl B return)) (sttfa.impl (And A B) return))))).
+
+or_introl :
+  sttfa.eps
+    (sttfa.forall
+       sttfa.bool
+       (A:(sttfa.eta sttfa.bool) =>
+        sttfa.forall sttfa.bool (B:(sttfa.eta sttfa.bool) => sttfa.impl A (Or A B)))).
+
+or_intror :
+  sttfa.eps
+    (sttfa.forall
+       sttfa.bool
+       (A:(sttfa.eta sttfa.bool) =>
+        sttfa.forall sttfa.bool (B:(sttfa.eta sttfa.bool) => sttfa.impl B (Or A B)))).
+
+match_Or_prop :
+  sttfa.eps
+    (sttfa.forall
+       sttfa.bool
+       (A:(sttfa.eta sttfa.bool) =>
+        sttfa.forall
+          sttfa.bool
+          (B:(sttfa.eta sttfa.bool) =>
+           sttfa.forall
+             sttfa.bool
+             (return:(sttfa.eta sttfa.bool) =>
+              sttfa.impl
+                (sttfa.impl A return)
+                (sttfa.impl (sttfa.impl B return) (sttfa.impl (Or A B) return)))))).
+
+ex_intro :
+  sttfa.eps
+    (sttfa.forallP
+       (A:sttfa.type =>
+        sttfa.forall
+          (sttfa.arrow A sttfa.bool)
+          (P:(sttfa.eta (sttfa.arrow A sttfa.bool)) =>
+           sttfa.forall A (x:(sttfa.eta A) => sttfa.impl (P x) (ex A P))))).
+
+match_ex_prop :
+  sttfa.eps
+    (sttfa.forallP
+       (A:sttfa.type =>
+        sttfa.forall
+          (sttfa.arrow A sttfa.bool)
+          (P:(sttfa.eta (sttfa.arrow A sttfa.bool)) =>
+           sttfa.forall
+             sttfa.bool
+             (return:(sttfa.eta sttfa.bool) =>
+              sttfa.impl
+                (sttfa.forall A (x:(sttfa.eta A) => sttfa.impl (P x) return))
+                (sttfa.impl (ex A P) return))))).
+
+refl_equal :
+  sttfa.eps (sttfa.forallP (A:sttfa.type => sttfa.forall A (x:(sttfa.eta A) => equal A x x))).
+
+equal_leibniz :
+  sttfa.eps
+    (sttfa.forallP
+       (A:sttfa.type =>
+        sttfa.forall
+          A
+          (x:(sttfa.eta A) =>
+           sttfa.forall
+             A
+             (y:(sttfa.eta A) =>
+              sttfa.impl
+                (equal A x y)
+                (sttfa.forall
+                   (sttfa.arrow A sttfa.bool)
+                   (P:(sttfa.eta (sttfa.arrow A sttfa.bool)) => sttfa.impl (P x) (P y))))))).
+

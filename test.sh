@@ -3,9 +3,9 @@ set -e
 rm -rf *.dko output/ _build/ ctslib/ final/
 mkdir ctslib
 
-dkcheck -e --snf theory/*.dk
+dkcheck -e  theory/*.dk
 
-for f in lib/*.dk
+for f in lib_no_cumul/*.dk
 do
 	echo "[dkmeta] converting $f"
 	
@@ -18,7 +18,7 @@ done
 files=$(dkdep -I ./theory/ -I ./ctslib/ -s theory/*.dk ctslib/*.dk)
 lib_files=$(echo $files | sed 's/[^ ]*theory\/[^ ]*.dk//g' -)
 
-dkcheck -I ./theory -I ./ctslib/ -e --snf $files
+dkcheck -I ./theory -I ./ctslib/ -e  $files
 
 OCAMLRUNPARAM='b' \
 dune exec universo -- -o output \
